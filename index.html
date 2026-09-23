@@ -87,6 +87,81 @@
     }
 
     /* =========================
+       LESSON GRID
+    ========================= */
+
+    .lesson-hint {
+      margin: 0 0 14px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    .lesson-toolbar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .lesson-tool-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid #d1d5db;
+      background: white;
+      color: #4b5563;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .lesson-tool-btn:hover {
+      background: #f3f4f6;
+    }
+
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .lesson-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .lesson-btn {
+      border: none;
+      border-radius: 12px;
+      padding: 14px 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      background: #14808a;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .lesson-btn:hover {
+      background: #106b73;
+    }
+
+    .lesson-btn.selected {
+      background: #0d4f56;
+      box-shadow: 0 0 0 3px #99e6e0 inset;
+    }
+
+    .lesson-btn.disabled {
+      background: #d1d5db;
+      color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .lesson-btn.disabled:hover {
+      background: #d1d5db;
+    }
+
+    /* =========================
        QUESTION
     ========================= */
 
@@ -409,15 +484,43 @@
 
   <div class="card">
 
-    <div class="field" style="margin-bottom:15px;">
+    <div class="field" style="margin-bottom:0;">
 
       <label>Bài học (Minna no Nihongo)</label>
 
-      <select id="lessonFilter">
-        <option value="all">Tất cả các bài (1 → 25)</option>
-      </select>
+      <p class="lesson-hint">
+        Chọn một hoặc nhiều bài (VD: Bài 5, Bài 7, Bài 8). Không chọn bài nào = luyện tất cả.
+      </p>
+
+      <div class="lesson-toolbar">
+
+        <button
+          type="button"
+          id="lessonAllBtn"
+          class="lesson-tool-btn">
+          Chọn tất cả
+        </button>
+
+        <button
+          type="button"
+          id="lessonClearBtn"
+          class="lesson-tool-btn">
+          Bỏ chọn
+        </button>
+
+      </div>
+
+      <div
+        id="lessonGrid"
+        class="lesson-grid">
+      </div>
 
     </div>
+
+  </div>
+
+
+  <div class="card">
 
     <div class="settings">
 
@@ -2114,8 +2217,14 @@ let showGroup = false;
    ELEMENTS
 ========================================================= */
 
-const lessonFilter =
-  document.getElementById("lessonFilter");
+const lessonGrid =
+  document.getElementById("lessonGrid");
+
+const lessonAllBtn =
+  document.getElementById("lessonAllBtn");
+
+const lessonClearBtn =
+  document.getElementById("lessonClearBtn");
 
 const fromForm =
   document.getElementById("fromForm");
@@ -2165,34 +2274,102 @@ const toggleGroup =
    LESSON FILTER
 ========================================================= */
 
+let selectedLessons = new Set();
+
 function populateLessonFilter() {
 
-  const lessons =
-    [...new Set(verbs.map(v => v.lesson))]
-      .sort((a, b) => a - b);
+  const lessonsWithData =
+    new Set(verbs.map(v => v.lesson));
 
-  lessons.forEach(l => {
+  for (let l = 1; l <= 25; l++) {
 
-    const opt =
-      document.createElement("option");
+    const btn =
+      document.createElement("button");
 
-    opt.value = l;
-    opt.textContent = `Bài ${l}`;
+    btn.type = "button";
+    btn.textContent = l;
+    btn.className = "lesson-btn";
+    btn.dataset.lesson = l;
 
-    lessonFilter.appendChild(opt);
+    if (!lessonsWithData.has(l)) {
+
+      btn.classList.add("disabled");
+      btn.disabled = true;
+      btn.title = "Chưa có động từ mới ở bài này";
+
+    } else {
+
+      btn.addEventListener(
+        "click",
+        () => toggleLesson(l, btn)
+      );
+    }
+
+    lessonGrid.appendChild(btn);
+  }
+}
+
+function toggleLesson(lesson, btn) {
+
+  if (selectedLessons.has(lesson)) {
+
+    selectedLessons.delete(lesson);
+    btn.classList.remove("selected");
+
+  } else {
+
+    selectedLessons.add(lesson);
+    btn.classList.add("selected");
+  }
+
+  applyLessonFilter();
+
+  createQuestion();
+}
+
+function selectAllLessons() {
+
+  const buttons =
+    lessonGrid.querySelectorAll(
+      ".lesson-btn:not(.disabled)"
+    );
+
+  buttons.forEach(btn => {
+
+    selectedLessons.add(
+      Number(btn.dataset.lesson)
+    );
+
+    btn.classList.add("selected");
   });
+
+  applyLessonFilter();
+
+  createQuestion();
+}
+
+function clearLessons() {
+
+  selectedLessons.clear();
+
+  lessonGrid
+    .querySelectorAll(".lesson-btn")
+    .forEach(btn =>
+      btn.classList.remove("selected")
+    );
+
+  applyLessonFilter();
+
+  createQuestion();
 }
 
 function applyLessonFilter() {
 
-  const value =
-    lessonFilter.value;
-
   filteredVerbs =
-    value === "all"
+    selectedLessons.size === 0
       ? verbs
       : verbs.filter(
-          v => String(v.lesson) === value
+          v => selectedLessons.has(v.lesson)
         );
 
   if (filteredVerbs.length === 0) {
@@ -2651,14 +2828,15 @@ toForm.addEventListener(
 );
 
 
-lessonFilter.addEventListener(
-  "change",
-  () => {
+lessonAllBtn.addEventListener(
+  "click",
+  selectAllLessons
+);
 
-    applyLessonFilter();
 
-    createQuestion();
-  }
+lessonClearBtn.addEventListener(
+  "click",
+  clearLessons
 );
 
 
