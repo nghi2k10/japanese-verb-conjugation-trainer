@@ -1,0 +1,2680 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Japanese Verb Conjugation Trainer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Segoe UI",
+        "Noto Sans JP",
+        Arial,
+        sans-serif;
+
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .app {
+      width: min(900px, 94%);
+      margin: 40px auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .header p {
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       FORM SELECT
+    ========================= */
+
+    .settings {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 15px;
+      align-items: end;
+    }
+
+    .field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #4b5563;
+    }
+
+    select {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      background: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 28px;
+      padding-bottom: 5px;
+    }
+
+    /* =========================
+       QUESTION
+    ========================= */
+
+    .question {
+      text-align: center;
+      padding: 20px 0 30px;
+    }
+
+    .question-label {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .verb {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 10px 0 0;
+    }
+
+    /*
+      Hiragana dưới Kanji
+    */
+
+    .verb-reading {
+      margin-top: 4px;
+      font-size: 22px;
+      color: #6366f1;
+      letter-spacing: 1px;
+    }
+
+    .meaning {
+      color: #6b7280;
+      font-size: 16px;
+      margin-top: 8px;
+    }
+
+    .group {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #eef2ff;
+      color: #4f46e5;
+      font-size: 12px;
+    }
+
+    /* =========================
+       ANSWER
+    ========================= */
+
+    .answer-area {
+      margin-top: 15px;
+    }
+
+    .answer-input {
+      width: 100%;
+      padding: 16px;
+      font-size: 24px;
+      text-align: center;
+
+      border: 2px solid #d1d5db;
+      border-radius: 12px;
+
+      outline: none;
+
+      transition: 0.2s;
+    }
+
+    .answer-input:focus {
+      border-color: #6366f1;
+    }
+
+    .answer-input.correct {
+      border-color: #22c55e;
+      background: #f0fdf4;
+      color: #15803d;
+    }
+
+    .answer-input.wrong {
+      border-color: #ef4444;
+      background: #fef2f2;
+      color: #dc2626;
+    }
+
+    .converted {
+      text-align: center;
+      margin-top: 10px;
+
+      min-height: 30px;
+
+      font-size: 20px;
+      color: #6b7280;
+    }
+
+    .result {
+      text-align: center;
+
+      font-size: 20px;
+      font-weight: 700;
+
+      min-height: 35px;
+
+      margin-top: 10px;
+    }
+
+    .result.correct {
+      color: #16a34a;
+    }
+
+    .result.wrong {
+      color: #dc2626;
+    }
+
+    .correct-answer {
+      text-align: center;
+
+      margin-top: 8px;
+
+      color: #dc2626;
+
+      font-size: 18px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+
+      padding: 13px 25px;
+
+      border-radius: 10px;
+
+      font-size: 16px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+
+    .btn-check {
+      background: #4f46e5;
+      color: white;
+    }
+
+    .btn-check:hover {
+      background: #4338ca;
+    }
+
+    .btn-next {
+      background: #111827;
+      color: white;
+    }
+
+    .btn-next:hover {
+      background: #000;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 12px;
+    }
+
+    .stat {
+      text-align: center;
+
+      background: #f9fafb;
+
+      padding: 18px;
+
+      border-radius: 12px;
+    }
+
+    .stat-value {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      color: #6b7280;
+      font-size: 13px;
+
+      margin-top: 4px;
+    }
+
+    .progress {
+      margin-top: 18px;
+
+      height: 8px;
+
+      background: #e5e7eb;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+
+      width: 0%;
+
+      background: #22c55e;
+
+      transition: width 0.3s;
+    }
+
+    @media (max-width: 600px) {
+
+      .settings {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .verb {
+        font-size: 34px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================
+      HIDE / SHOW CONTROLS
+    ========================= */
+
+    .info-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      min-height: 36px;
+
+      margin-top: 5px;
+    }
+
+    .toggle-btn {
+      width: 32px;
+      height: 32px;
+
+      padding: 0;
+
+      border: 1px solid #d1d5db;
+
+      border-radius: 8px;
+
+      background: white;
+
+      color: #6b7280;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      transition: all 0.2s;
+    }
+
+    .toggle-btn:hover {
+      background: #f3f4f6;
+
+      border-color: #9ca3af;
+    }
+
+    .toggle-btn.hidden {
+      opacity: 0.5;
+    }
+
+    .info-hidden {
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <div class="header">
+
+    <h1>🇯🇵 Luyện Chia Thể Động Từ</h1>
+
+    <p>
+      Nhập Romaji → tự động chuyển sang Hiragana
+    </p>
+
+  </div>
+
+
+  <!-- =========================
+       FORM SELECT
+  ========================== -->
+
+  <div class="card">
+
+    <div class="field" style="margin-bottom:15px;">
+
+      <label>Bài học (Minna no Nihongo)</label>
+
+      <select id="lessonFilter">
+        <option value="all">Tất cả các bài (1 → 25)</option>
+      </select>
+
+    </div>
+
+    <div class="settings">
+
+      <div class="field">
+
+        <label>Từ dạng</label>
+
+        <select id="fromForm">
+
+          <option value="masu">
+            ます形
+          </option>
+
+          <option value="dictionary">
+            辞書形
+          </option>
+
+          <option value="nai">
+            ない形
+          </option>
+
+          <option value="te">
+            て形
+          </option>
+
+          <option value="ta">
+            た形
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="field">
+
+        <label>Chia sang</label>
+
+        <select id="toForm">
+
+          <option value="te">
+            て形
+          </option>
+
+          <option value="ta">
+            た形
+          </option>
+
+          <option value="nai">
+            ない形
+          </option>
+
+          <option value="dictionary">
+            辞書形
+          </option>
+
+          <option value="masu">
+            ます形
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       QUESTION
+  ========================== -->
+
+  <div class="card">
+
+    <div class="question">
+
+      <div class="question-label">
+        Động từ
+      </div>
+
+      <!-- KANJI -->
+      <div
+        id="questionVerb"
+        class="verb">
+      </div>
+
+      <!-- HIRAGANA -->
+      <div class="info-row">
+
+        <div
+          id="verbReading"
+          class="verb-reading">
+        </div>
+
+        <button
+          id="toggleHiragana"
+          class="toggle-btn"
+          title="Ẩn / hiện Hiragana">
+          👁
+        </button>
+
+      </div>
+
+
+      <!-- NGHĨA -->
+      <div class="info-row">
+
+        <div
+          id="meaning"
+          class="meaning">
+        </div>
+
+        <button
+          id="toggleMeaning"
+          class="toggle-btn"
+          title="Ẩn / hiện nghĩa">
+          👁
+        </button>
+
+      </div>
+
+
+      <!-- NHÓM -->
+      <div class="info-row">
+
+        <div
+          id="group"
+          class="group">
+        </div>
+
+        <button
+          id="toggleGroup"
+          class="toggle-btn"
+          title="Ẩn / hiện nhóm">
+          👁
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         ANSWER
+    ========================== -->
+
+    <div class="answer-area">
+
+      <input
+        id="answerInput"
+        class="answer-input"
+
+        type="text"
+
+        autocomplete="off"
+
+        placeholder="Nhập Romaji..."
+      >
+
+
+      <!-- ROMAJI -> HIRAGANA -->
+
+      <div
+        id="converted"
+        class="converted">
+      </div>
+
+
+      <!-- RESULT -->
+
+      <div
+        id="result"
+        class="result">
+      </div>
+
+
+      <!-- CORRECT ANSWER -->
+
+      <div
+        id="correctAnswer"
+        class="correct-answer">
+      </div>
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <div class="buttons">
+
+      <button
+        id="checkBtn"
+        class="btn-check">
+
+        Kiểm tra
+
+      </button>
+
+
+      <button
+        id="nextBtn"
+        class="btn-next">
+
+        Câu tiếp theo →
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       STATS
+  ========================== -->
+
+  <div class="card">
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <div
+          id="total"
+          class="stat-value">
+
+          0
+
+        </div>
+
+        <div class="stat-label">
+          Đã làm
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div
+          id="correct"
+          class="stat-value">
+
+          0
+
+        </div>
+
+        <div class="stat-label">
+          Đúng
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <div
+          id="accuracy"
+          class="stat-value">
+
+          0%
+
+        </div>
+
+        <div class="stat-label">
+          Chính xác
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="progress">
+
+      <div
+        id="progressBar"
+        class="progress-bar">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   ROMAJI → HIRAGANA
+========================================================= */
+
+const romajiMap = {
+
+  kya: "きゃ",
+  kyu: "きゅ",
+  kyo: "きょ",
+
+  gya: "ぎゃ",
+  gyu: "ぎゅ",
+  gyo: "ぎょ",
+
+  sha: "しゃ",
+  shu: "しゅ",
+  sho: "しょ",
+
+  ja: "じゃ",
+  ju: "じゅ",
+  jo: "じょ",
+
+  cha: "ちゃ",
+  chu: "ちゅ",
+  cho: "ちょ",
+
+  nya: "にゃ",
+  nyu: "にゅ",
+  nyo: "にょ",
+
+  hya: "ひゃ",
+  hyu: "ひゅ",
+  hyo: "ひょ",
+
+  bya: "びゃ",
+  byu: "びゅ",
+  byo: "びょ",
+
+  pya: "ぴゃ",
+  pyu: "ぴゅ",
+  pyo: "ぴょ",
+
+  mya: "みゃ",
+  myu: "みゅ",
+  myo: "みょ",
+
+  rya: "りゃ",
+  ryu: "りゅ",
+  ryo: "りょ",
+
+  shi: "し",
+  chi: "ち",
+  tsu: "つ",
+
+  ka: "か",
+  ki: "き",
+  ku: "く",
+  ke: "け",
+  ko: "こ",
+
+  ga: "が",
+  gi: "ぎ",
+  gu: "ぐ",
+  ge: "げ",
+  go: "ご",
+
+  sa: "さ",
+  si: "し",
+  su: "す",
+  se: "せ",
+  so: "そ",
+
+  za: "ざ",
+  zi: "じ",
+  zu: "ず",
+  ze: "ぜ",
+  zo: "ぞ",
+
+  ta: "た",
+  ti: "ち",
+  tu: "つ",
+  te: "て",
+  to: "と",
+
+  da: "だ",
+  di: "ぢ",
+  du: "づ",
+  de: "で",
+  do: "ど",
+
+  na: "な",
+  ni: "に",
+  nu: "ぬ",
+  ne: "ね",
+  no: "の",
+
+  ha: "は",
+  hi: "ひ",
+  hu: "ふ",
+  fu: "ふ",
+  he: "へ",
+  ho: "ほ",
+
+  ba: "ば",
+  bi: "び",
+  bu: "ぶ",
+  be: "べ",
+  bo: "ぼ",
+
+  pa: "ぱ",
+  pi: "ぴ",
+  pu: "ぷ",
+  pe: "ぺ",
+  po: "ぽ",
+
+  ma: "ま",
+  mi: "み",
+  mu: "む",
+  me: "め",
+  mo: "も",
+
+  ya: "や",
+  yu: "ゆ",
+  yo: "よ",
+
+  ra: "ら",
+  ri: "り",
+  ru: "る",
+  re: "れ",
+  ro: "ろ",
+
+  wa: "わ",
+  wo: "を",
+
+  a: "あ",
+  i: "い",
+  u: "う",
+  e: "え",
+  o: "お",
+
+  n: "ん"
+};
+
+
+function romajiToHiragana(text) {
+
+  text = text
+    .toLowerCase()
+    .replace(/\s+/g, "");
+
+  let result = "";
+
+  let i = 0;
+
+
+  while (i < text.length) {
+
+    /*
+      Double consonant
+
+      katta
+      ↓
+      かった
+    */
+
+    if (
+      i + 1 < text.length &&
+      text[i] === text[i + 1] &&
+      !"aeioun".includes(text[i])
+    ) {
+
+      result += "っ";
+
+      i++;
+
+      continue;
+    }
+
+
+    let found = false;
+
+
+    /*
+      Ưu tiên 3 ký tự
+      → 2 ký tự
+      → 1 ký tự
+    */
+
+    for (
+      let len = 3;
+      len >= 1;
+      len--
+    ) {
+
+      const part =
+        text.substring(i, i + len);
+
+
+      if (romajiMap[part]) {
+
+        result += romajiMap[part];
+
+        i += len;
+
+        found = true;
+
+        break;
+      }
+
+    }
+
+
+    if (!found) {
+
+      result += text[i];
+
+      i++;
+
+    }
+
+  }
+
+
+  return result;
+}
+
+
+/* =========================================================
+   VERB DATABASE
+========================================================= */
+
+/*
+  QUAN TRỌNG:
+
+  Mỗi thể có:
+
+  kanji  = hiển thị cho người học
+  kana   = dùng để kiểm tra
+
+  Ví dụ:
+
+  te:
+  {
+    kanji: "書いて",
+    kana: "かいて"
+  }
+*/
+
+const verbs = [
+  {
+    lesson: 4,
+    group: 2,
+    meaning: "thức dậy",
+    romaji: "okiru",
+    dictionary: { kanji: "起きる", kana: "おきる" },
+    masu: { kanji: "起きます", kana: "おきます" },
+    nai: { kanji: "起きない", kana: "おきない" },
+    te: { kanji: "起きて", kana: "おきて" },
+    ta: { kanji: "起きた", kana: "おきた" }
+  },
+  {
+    lesson: 4,
+    group: 2,
+    meaning: "ngủ",
+    romaji: "neru",
+    dictionary: { kanji: "寝る", kana: "ねる" },
+    masu: { kanji: "寝ます", kana: "ねます" },
+    nai: { kanji: "寝ない", kana: "ねない" },
+    te: { kanji: "寝て", kana: "ねて" },
+    ta: { kanji: "寝た", kana: "ねた" }
+  },
+  {
+    lesson: 4,
+    group: 1,
+    meaning: "làm việc",
+    romaji: "hataraku",
+    dictionary: { kanji: "働く", kana: "はたらく" },
+    masu: { kanji: "働きます", kana: "はたらきます" },
+    nai: { kanji: "働かない", kana: "はたらかない" },
+    te: { kanji: "働いて", kana: "はたらいて" },
+    ta: { kanji: "働いた", kana: "はたらいた" }
+  },
+  {
+    lesson: 4,
+    group: 1,
+    meaning: "nghỉ (làm/học)",
+    romaji: "yasumu",
+    dictionary: { kanji: "休む", kana: "やすむ" },
+    masu: { kanji: "休みます", kana: "やすみます" },
+    nai: { kanji: "休まない", kana: "やすまない" },
+    te: { kanji: "休んで", kana: "やすんで" },
+    ta: { kanji: "休んだ", kana: "やすんだ" }
+  },
+  {
+    lesson: 4,
+    group: 3,
+    meaning: "học tập",
+    romaji: "benkyou suru",
+    dictionary: { kanji: "勉強する", kana: "べんきょうする" },
+    masu: { kanji: "勉強します", kana: "べんきょうします" },
+    nai: { kanji: "勉強しない", kana: "べんきょうしない" },
+    te: { kanji: "勉強して", kana: "べんきょうして" },
+    ta: { kanji: "勉強した", kana: "べんきょうした" }
+  },
+  {
+    lesson: 4,
+    group: 1,
+    meaning: "kết thúc, xong",
+    romaji: "owaru",
+    dictionary: { kanji: "終わる", kana: "おわる" },
+    masu: { kanji: "終わります", kana: "おわります" },
+    nai: { kanji: "終わらない", kana: "おわらない" },
+    te: { kanji: "終わって", kana: "おわって" },
+    ta: { kanji: "終わった", kana: "おわった" }
+  },
+  {
+    lesson: 4,
+    group: 1,
+    meaning: "bắt đầu",
+    romaji: "hajimaru",
+    dictionary: { kanji: "始まる", kana: "はじまる" },
+    masu: { kanji: "始まります", kana: "はじまります" },
+    nai: { kanji: "始まらない", kana: "はじまらない" },
+    te: { kanji: "始まって", kana: "はじまって" },
+    ta: { kanji: "始まった", kana: "はじまった" }
+  },
+  {
+    lesson: 5,
+    group: 1,
+    meaning: "đi",
+    romaji: "iku",
+    dictionary: { kanji: "行く", kana: "いく" },
+    masu: { kanji: "行きます", kana: "いきます" },
+    nai: { kanji: "行かない", kana: "いかない" },
+    te: { kanji: "行って", kana: "いって" },
+    ta: { kanji: "行った", kana: "いった" }
+  },
+  {
+    lesson: 5,
+    group: 3,
+    meaning: "đến",
+    romaji: "kuru",
+    dictionary: { kanji: "来る", kana: "くる" },
+    masu: { kanji: "来ます", kana: "きます" },
+    nai: { kanji: "来ない", kana: "こない" },
+    te: { kanji: "来て", kana: "きて" },
+    ta: { kanji: "来た", kana: "きた" }
+  },
+  {
+    lesson: 5,
+    group: 1,
+    meaning: "về (nhà/nước)",
+    romaji: "kaeru",
+    dictionary: { kanji: "帰る", kana: "かえる" },
+    masu: { kanji: "帰ります", kana: "かえります" },
+    nai: { kanji: "帰らない", kana: "かえらない" },
+    te: { kanji: "帰って", kana: "かえって" },
+    ta: { kanji: "帰った", kana: "かえった" }
+  },
+  {
+    lesson: 6,
+    group: 2,
+    meaning: "ăn",
+    romaji: "taberu",
+    dictionary: { kanji: "食べる", kana: "たべる" },
+    masu: { kanji: "食べます", kana: "たべます" },
+    nai: { kanji: "食べない", kana: "たべない" },
+    te: { kanji: "食べて", kana: "たべて" },
+    ta: { kanji: "食べた", kana: "たべた" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "uống",
+    romaji: "nomu",
+    dictionary: { kanji: "飲む", kana: "のむ" },
+    masu: { kanji: "飲みます", kana: "のみます" },
+    nai: { kanji: "飲まない", kana: "のまない" },
+    te: { kanji: "飲んで", kana: "のんで" },
+    ta: { kanji: "飲んだ", kana: "のんだ" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "hút (thuốc)",
+    romaji: "suu",
+    dictionary: { kanji: "吸う", kana: "すう" },
+    masu: { kanji: "吸います", kana: "すいます" },
+    nai: { kanji: "吸わない", kana: "すわない" },
+    te: { kanji: "吸って", kana: "すって" },
+    ta: { kanji: "吸った", kana: "すった" }
+  },
+  {
+    lesson: 6,
+    group: 2,
+    meaning: "xem, nhìn",
+    romaji: "miru",
+    dictionary: { kanji: "見る", kana: "みる" },
+    masu: { kanji: "見ます", kana: "みます" },
+    nai: { kanji: "見ない", kana: "みない" },
+    te: { kanji: "見て", kana: "みて" },
+    ta: { kanji: "見た", kana: "みた" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "nghe, hỏi",
+    romaji: "kiku",
+    dictionary: { kanji: "聞く", kana: "きく" },
+    masu: { kanji: "聞きます", kana: "ききます" },
+    nai: { kanji: "聞かない", kana: "きかない" },
+    te: { kanji: "聞いて", kana: "きいて" },
+    ta: { kanji: "聞いた", kana: "きいた" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "đọc",
+    romaji: "yomu",
+    dictionary: { kanji: "読む", kana: "よむ" },
+    masu: { kanji: "読みます", kana: "よみます" },
+    nai: { kanji: "読まない", kana: "よまない" },
+    te: { kanji: "読んで", kana: "よんで" },
+    ta: { kanji: "読んだ", kana: "よんだ" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "viết",
+    romaji: "kaku",
+    dictionary: { kanji: "書く", kana: "かく" },
+    masu: { kanji: "書きます", kana: "かきます" },
+    nai: { kanji: "書かない", kana: "かかない" },
+    te: { kanji: "書いて", kana: "かいて" },
+    ta: { kanji: "書いた", kana: "かいた" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "mua",
+    romaji: "kau",
+    dictionary: { kanji: "買う", kana: "かう" },
+    masu: { kanji: "買います", kana: "かいます" },
+    nai: { kanji: "買わない", kana: "かわない" },
+    te: { kanji: "買って", kana: "かって" },
+    ta: { kanji: "買った", kana: "かった" }
+  },
+  {
+    lesson: 6,
+    group: 3,
+    meaning: "làm",
+    romaji: "suru",
+    dictionary: { kanji: "する", kana: "する" },
+    masu: { kanji: "します", kana: "します" },
+    nai: { kanji: "しない", kana: "しない" },
+    te: { kanji: "して", kana: "して" },
+    ta: { kanji: "した", kana: "した" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "gặp",
+    romaji: "au",
+    dictionary: { kanji: "会う", kana: "あう" },
+    masu: { kanji: "会います", kana: "あいます" },
+    nai: { kanji: "会わない", kana: "あわない" },
+    te: { kanji: "会って", kana: "あって" },
+    ta: { kanji: "会った", kana: "あった" }
+  },
+  {
+    lesson: 6,
+    group: 1,
+    meaning: "nói",
+    romaji: "iu",
+    dictionary: { kanji: "言う", kana: "いう" },
+    masu: { kanji: "言います", kana: "いいます" },
+    nai: { kanji: "言わない", kana: "いわない" },
+    te: { kanji: "言って", kana: "いって" },
+    ta: { kanji: "言った", kana: "いった" }
+  },
+  {
+    lesson: 7,
+    group: 1,
+    meaning: "cho mượn",
+    romaji: "kasu",
+    dictionary: { kanji: "貸す", kana: "かす" },
+    masu: { kanji: "貸します", kana: "かします" },
+    nai: { kanji: "貸さない", kana: "かさない" },
+    te: { kanji: "貸して", kana: "かして" },
+    ta: { kanji: "貸した", kana: "かした" }
+  },
+  {
+    lesson: 7,
+    group: 2,
+    meaning: "mượn",
+    romaji: "kariru",
+    dictionary: { kanji: "借りる", kana: "かりる" },
+    masu: { kanji: "借ります", kana: "かります" },
+    nai: { kanji: "借りない", kana: "かりない" },
+    te: { kanji: "借りて", kana: "かりて" },
+    ta: { kanji: "借りた", kana: "かりた" }
+  },
+  {
+    lesson: 7,
+    group: 2,
+    meaning: "dạy, chỉ",
+    romaji: "oshieru",
+    dictionary: { kanji: "教える", kana: "おしえる" },
+    masu: { kanji: "教えます", kana: "おしえます" },
+    nai: { kanji: "教えない", kana: "おしえない" },
+    te: { kanji: "教えて", kana: "おしえて" },
+    ta: { kanji: "教えた", kana: "おしえた" }
+  },
+  {
+    lesson: 7,
+    group: 1,
+    meaning: "học (từ ai đó)",
+    romaji: "narau",
+    dictionary: { kanji: "習う", kana: "ならう" },
+    masu: { kanji: "習います", kana: "ならいます" },
+    nai: { kanji: "習わない", kana: "ならわない" },
+    te: { kanji: "習って", kana: "ならって" },
+    ta: { kanji: "習った", kana: "ならった" }
+  },
+  {
+    lesson: 7,
+    group: 2,
+    meaning: "gọi (điện thoại)",
+    romaji: "kakeru",
+    dictionary: { kanji: "かける", kana: "かける" },
+    masu: { kanji: "かけます", kana: "かけます" },
+    nai: { kanji: "かけない", kana: "かけない" },
+    te: { kanji: "かけて", kana: "かけて" },
+    ta: { kanji: "かけた", kana: "かけた" }
+  },
+  {
+    lesson: 7,
+    group: 1,
+    meaning: "gửi, đưa",
+    romaji: "okuru",
+    dictionary: { kanji: "送る", kana: "おくる" },
+    masu: { kanji: "送ります", kana: "おくります" },
+    nai: { kanji: "送らない", kana: "おくらない" },
+    te: { kanji: "送って", kana: "おくって" },
+    ta: { kanji: "送った", kana: "おくった" }
+  },
+  {
+    lesson: 7,
+    group: 2,
+    meaning: "cho, tặng",
+    romaji: "ageru",
+    dictionary: { kanji: "あげる", kana: "あげる" },
+    masu: { kanji: "あげます", kana: "あげます" },
+    nai: { kanji: "あげない", kana: "あげない" },
+    te: { kanji: "あげて", kana: "あげて" },
+    ta: { kanji: "あげた", kana: "あげた" }
+  },
+  {
+    lesson: 7,
+    group: 1,
+    meaning: "nhận",
+    romaji: "morau",
+    dictionary: { kanji: "もらう", kana: "もらう" },
+    masu: { kanji: "もらいます", kana: "もらいます" },
+    nai: { kanji: "もらわない", kana: "もらわない" },
+    te: { kanji: "もらって", kana: "もらって" },
+    ta: { kanji: "もらった", kana: "もらった" }
+  },
+  {
+    lesson: 7,
+    group: 2,
+    meaning: "cho (tôi)",
+    romaji: "kureru",
+    dictionary: { kanji: "くれる", kana: "くれる" },
+    masu: { kanji: "くれます", kana: "くれます" },
+    nai: { kanji: "くれない", kana: "くれない" },
+    te: { kanji: "くれて", kana: "くれて" },
+    ta: { kanji: "くれた", kana: "くれた" }
+  },
+  {
+    lesson: 7,
+    group: 1,
+    meaning: "chụp (ảnh)",
+    romaji: "toru",
+    dictionary: { kanji: "撮る", kana: "とる" },
+    masu: { kanji: "撮ります", kana: "とります" },
+    nai: { kanji: "撮らない", kana: "とらない" },
+    te: { kanji: "撮って", kana: "とって" },
+    ta: { kanji: "撮った", kana: "とった" }
+  },
+  {
+    lesson: 8,
+    group: 1,
+    meaning: "hiểu, biết",
+    romaji: "wakaru",
+    dictionary: { kanji: "分かる", kana: "わかる" },
+    masu: { kanji: "分かります", kana: "わかります" },
+    nai: { kanji: "分からない", kana: "わからない" },
+    te: { kanji: "分かって", kana: "わかって" },
+    ta: { kanji: "分かった", kana: "わかった" }
+  },
+  {
+    lesson: 9,
+    group: 1,
+    meaning: "có, tồn tại (vật)",
+    romaji: "aru",
+    dictionary: { kanji: "ある", kana: "ある" },
+    masu: { kanji: "あります", kana: "あります" },
+    nai: { kanji: "ない", kana: "ない" },
+    te: { kanji: "あって", kana: "あって" },
+    ta: { kanji: "あった", kana: "あった" }
+  },
+  {
+    lesson: 9,
+    group: 2,
+    meaning: "có, tồn tại (người/vật sống)",
+    romaji: "iru",
+    dictionary: { kanji: "いる", kana: "いる" },
+    masu: { kanji: "います", kana: "います" },
+    nai: { kanji: "いない", kana: "いない" },
+    te: { kanji: "いて", kana: "いて" },
+    ta: { kanji: "いた", kana: "いた" }
+  },
+  {
+    lesson: 9,
+    group: 2,
+    meaning: "được sinh ra",
+    romaji: "umareru",
+    dictionary: { kanji: "生まれる", kana: "うまれる" },
+    masu: { kanji: "生まれます", kana: "うまれます" },
+    nai: { kanji: "生まれない", kana: "うまれない" },
+    te: { kanji: "生まれて", kana: "うまれて" },
+    ta: { kanji: "生まれた", kana: "うまれた" }
+  },
+  {
+    lesson: 11,
+    group: 1,
+    meaning: "mất (thời gian, tiền)",
+    romaji: "kakaru",
+    dictionary: { kanji: "かかる", kana: "かかる" },
+    masu: { kanji: "かかります", kana: "かかります" },
+    nai: { kanji: "かからない", kana: "かからない" },
+    te: { kanji: "かかって", kana: "かかって" },
+    ta: { kanji: "かかった", kana: "かかった" }
+  },
+  {
+    lesson: 13,
+    group: 1,
+    meaning: "lên (xe), đi (bằng)",
+    romaji: "noru",
+    dictionary: { kanji: "乗る", kana: "のる" },
+    masu: { kanji: "乗ります", kana: "のります" },
+    nai: { kanji: "乗らない", kana: "のらない" },
+    te: { kanji: "乗って", kana: "のって" },
+    ta: { kanji: "乗った", kana: "のった" }
+  },
+  {
+    lesson: 13,
+    group: 2,
+    meaning: "xuống (xe)",
+    romaji: "oriru",
+    dictionary: { kanji: "降りる", kana: "おりる" },
+    masu: { kanji: "降ります", kana: "おります" },
+    nai: { kanji: "降りない", kana: "おりない" },
+    te: { kanji: "降りて", kana: "おりて" },
+    ta: { kanji: "降りた", kana: "おりた" }
+  },
+  {
+    lesson: 13,
+    group: 2,
+    meaning: "tắm (vòi sen)",
+    romaji: "abiru",
+    dictionary: { kanji: "浴びる", kana: "あびる" },
+    masu: { kanji: "浴びます", kana: "あびます" },
+    nai: { kanji: "浴びない", kana: "あびない" },
+    te: { kanji: "浴びて", kana: "あびて" },
+    ta: { kanji: "浴びた", kana: "あびた" }
+  },
+  {
+    lesson: 13,
+    group: 2,
+    meaning: "cho xem",
+    romaji: "miseru",
+    dictionary: { kanji: "見せる", kana: "みせる" },
+    masu: { kanji: "見せます", kana: "みせます" },
+    nai: { kanji: "見せない", kana: "みせない" },
+    te: { kanji: "見せて", kana: "みせて" },
+    ta: { kanji: "見せた", kana: "みせた" }
+  },
+  {
+    lesson: 13,
+    group: 1,
+    meaning: "băng qua, đi qua",
+    romaji: "wataru",
+    dictionary: { kanji: "渡る", kana: "わたる" },
+    masu: { kanji: "渡ります", kana: "わたります" },
+    nai: { kanji: "渡らない", kana: "わたらない" },
+    te: { kanji: "渡って", kana: "わたって" },
+    ta: { kanji: "渡った", kana: "わたった" }
+  },
+  {
+    lesson: 13,
+    group: 1,
+    meaning: "rẽ, quẹo",
+    romaji: "magaru",
+    dictionary: { kanji: "曲がる", kana: "まがる" },
+    masu: { kanji: "曲がります", kana: "まがります" },
+    nai: { kanji: "曲がらない", kana: "まがらない" },
+    te: { kanji: "曲がって", kana: "まがって" },
+    ta: { kanji: "曲がった", kana: "まがった" }
+  },
+  {
+    lesson: 14,
+    group: 1,
+    meaning: "giúp đỡ",
+    romaji: "tetsudau",
+    dictionary: { kanji: "手伝う", kana: "てつだう" },
+    masu: { kanji: "手伝います", kana: "てつだいます" },
+    nai: { kanji: "手伝わない", kana: "てつだわない" },
+    te: { kanji: "手伝って", kana: "てつだって" },
+    ta: { kanji: "手伝った", kana: "てつだった" }
+  },
+  {
+    lesson: 14,
+    group: 1,
+    meaning: "cầm, mang",
+    romaji: "motsu",
+    dictionary: { kanji: "持つ", kana: "もつ" },
+    masu: { kanji: "持ちます", kana: "もちます" },
+    nai: { kanji: "持たない", kana: "もたない" },
+    te: { kanji: "持って", kana: "もって" },
+    ta: { kanji: "持った", kana: "もった" }
+  },
+  {
+    lesson: 14,
+    group: 1,
+    meaning: "ngồi",
+    romaji: "suwaru",
+    dictionary: { kanji: "座る", kana: "すわる" },
+    masu: { kanji: "座ります", kana: "すわります" },
+    nai: { kanji: "座らない", kana: "すわらない" },
+    te: { kanji: "座って", kana: "すわって" },
+    ta: { kanji: "座った", kana: "すわった" }
+  },
+  {
+    lesson: 14,
+    group: 1,
+    meaning: "đứng",
+    romaji: "tatsu",
+    dictionary: { kanji: "立つ", kana: "たつ" },
+    masu: { kanji: "立ちます", kana: "たちます" },
+    nai: { kanji: "立たない", kana: "たたない" },
+    te: { kanji: "立って", kana: "たって" },
+    ta: { kanji: "立った", kana: "たった" }
+  },
+  {
+    lesson: 14,
+    group: 1,
+    meaning: "tắt, xóa",
+    romaji: "kesu",
+    dictionary: { kanji: "消す", kana: "けす" },
+    masu: { kanji: "消します", kana: "けします" },
+    nai: { kanji: "消さない", kana: "けさない" },
+    te: { kanji: "消して", kana: "けして" },
+    ta: { kanji: "消した", kana: "けした" }
+  },
+  {
+    lesson: 14,
+    group: 2,
+    meaning: "bật",
+    romaji: "tsukeru",
+    dictionary: { kanji: "つける", kana: "つける" },
+    masu: { kanji: "つけます", kana: "つけます" },
+    nai: { kanji: "つけない", kana: "つけない" },
+    te: { kanji: "つけて", kana: "つけて" },
+    ta: { kanji: "つけた", kana: "つけた" }
+  },
+  {
+    lesson: 14,
+    group: 2,
+    meaning: "mở",
+    romaji: "akeru",
+    dictionary: { kanji: "開ける", kana: "あける" },
+    masu: { kanji: "開けます", kana: "あけます" },
+    nai: { kanji: "開けない", kana: "あけない" },
+    te: { kanji: "開けて", kana: "あけて" },
+    ta: { kanji: "開けた", kana: "あけた" }
+  },
+  {
+    lesson: 14,
+    group: 2,
+    meaning: "đóng",
+    romaji: "shimeru",
+    dictionary: { kanji: "閉める", kana: "しめる" },
+    masu: { kanji: "閉めます", kana: "しめます" },
+    nai: { kanji: "閉めない", kana: "しめない" },
+    te: { kanji: "閉めて", kana: "しめて" },
+    ta: { kanji: "閉めた", kana: "しめた" }
+  },
+  {
+    lesson: 15,
+    group: 1,
+    meaning: "sống, cư trú",
+    romaji: "sumu",
+    dictionary: { kanji: "住む", kana: "すむ" },
+    masu: { kanji: "住みます", kana: "すみます" },
+    nai: { kanji: "住まない", kana: "すまない" },
+    te: { kanji: "住んで", kana: "すんで" },
+    ta: { kanji: "住んだ", kana: "すんだ" }
+  },
+  {
+    lesson: 15,
+    group: 1,
+    meaning: "biết",
+    romaji: "shiru",
+    dictionary: { kanji: "知る", kana: "しる" },
+    masu: { kanji: "知ります", kana: "しります" },
+    nai: { kanji: "知らない", kana: "しらない" },
+    te: { kanji: "知って", kana: "しって" },
+    ta: { kanji: "知った", kana: "しった" }
+  },
+  {
+    lesson: 15,
+    group: 3,
+    meaning: "kết hôn",
+    romaji: "kekkon suru",
+    dictionary: { kanji: "結婚する", kana: "けっこんする" },
+    masu: { kanji: "結婚します", kana: "けっこんします" },
+    nai: { kanji: "結婚しない", kana: "けっこんしない" },
+    te: { kanji: "結婚して", kana: "けっこんして" },
+    ta: { kanji: "結婚した", kana: "けっこんした" }
+  },
+  {
+    lesson: 15,
+    group: 2,
+    meaning: "làm việc (tại)",
+    romaji: "tsutomeru",
+    dictionary: { kanji: "勤める", kana: "つとめる" },
+    masu: { kanji: "勤めます", kana: "つとめます" },
+    nai: { kanji: "勤めない", kana: "つとめない" },
+    te: { kanji: "勤めて", kana: "つとめて" },
+    ta: { kanji: "勤めた", kana: "つとめた" }
+  },
+  {
+    lesson: 15,
+    group: 2,
+    meaning: "ghi nhớ",
+    romaji: "oboeru",
+    dictionary: { kanji: "覚える", kana: "おぼえる" },
+    masu: { kanji: "覚えます", kana: "おぼえます" },
+    nai: { kanji: "覚えない", kana: "おぼえない" },
+    te: { kanji: "覚えて", kana: "おぼえて" },
+    ta: { kanji: "覚えた", kana: "おぼえた" }
+  },
+  {
+    lesson: 16,
+    group: 1,
+    meaning: "sử dụng",
+    romaji: "tsukau",
+    dictionary: { kanji: "使う", kana: "つかう" },
+    masu: { kanji: "使います", kana: "つかいます" },
+    nai: { kanji: "使わない", kana: "つかわない" },
+    te: { kanji: "使って", kana: "つかって" },
+    ta: { kanji: "使った", kana: "つかった" }
+  },
+  {
+    lesson: 16,
+    group: 1,
+    meaning: "vào",
+    romaji: "hairu",
+    dictionary: { kanji: "入る", kana: "はいる" },
+    masu: { kanji: "入ります", kana: "はいります" },
+    nai: { kanji: "入らない", kana: "はいらない" },
+    te: { kanji: "入って", kana: "はいって" },
+    ta: { kanji: "入った", kana: "はいった" }
+  },
+  {
+    lesson: 16,
+    group: 2,
+    meaning: "ra, xuất phát",
+    romaji: "deru",
+    dictionary: { kanji: "出る", kana: "でる" },
+    masu: { kanji: "出ます", kana: "でます" },
+    nai: { kanji: "出ない", kana: "でない" },
+    te: { kanji: "出て", kana: "でて" },
+    ta: { kanji: "出た", kana: "でた" }
+  },
+  {
+    lesson: 16,
+    group: 3,
+    meaning: "photocopy",
+    romaji: "kopii suru",
+    dictionary: { kanji: "コピーする", kana: "コピーする" },
+    masu: { kanji: "コピーします", kana: "コピーします" },
+    nai: { kanji: "コピーしない", kana: "コピーしない" },
+    te: { kanji: "コピーして", kana: "コピーして" },
+    ta: { kanji: "コピーした", kana: "コピーした" }
+  },
+  {
+    lesson: 17,
+    group: 3,
+    meaning: "lái (xe)",
+    romaji: "unten suru",
+    dictionary: { kanji: "運転する", kana: "うんてんする" },
+    masu: { kanji: "運転します", kana: "うんてんします" },
+    nai: { kanji: "運転しない", kana: "うんてんしない" },
+    te: { kanji: "運転して", kana: "うんてんして" },
+    ta: { kanji: "運転した", kana: "うんてんした" }
+  },
+  {
+    lesson: 17,
+    group: 1,
+    meaning: "chơi (đàn)",
+    romaji: "hiku",
+    dictionary: { kanji: "弾く", kana: "ひく" },
+    masu: { kanji: "弾きます", kana: "ひきます" },
+    nai: { kanji: "弾かない", kana: "ひかない" },
+    te: { kanji: "弾いて", kana: "ひいて" },
+    ta: { kanji: "弾いた", kana: "ひいた" }
+  },
+  {
+    lesson: 17,
+    group: 1,
+    meaning: "bơi",
+    romaji: "oyogu",
+    dictionary: { kanji: "泳ぐ", kana: "およぐ" },
+    masu: { kanji: "泳ぎます", kana: "およぎます" },
+    nai: { kanji: "泳がない", kana: "およがない" },
+    te: { kanji: "泳いで", kana: "およいで" },
+    ta: { kanji: "泳いだ", kana: "およいだ" }
+  },
+  {
+    lesson: 17,
+    group: 1,
+    meaning: "nhảy múa",
+    romaji: "odoru",
+    dictionary: { kanji: "踊る", kana: "おどる" },
+    masu: { kanji: "踊ります", kana: "おどります" },
+    nai: { kanji: "踊らない", kana: "おどらない" },
+    te: { kanji: "踊って", kana: "おどって" },
+    ta: { kanji: "踊った", kana: "おどった" }
+  },
+  {
+    lesson: 17,
+    group: 2,
+    meaning: "có thể, làm được",
+    romaji: "dekiru",
+    dictionary: { kanji: "できる", kana: "できる" },
+    masu: { kanji: "できます", kana: "できます" },
+    nai: { kanji: "できない", kana: "できない" },
+    te: { kanji: "できて", kana: "できて" },
+    ta: { kanji: "できた", kana: "できた" }
+  },
+  {
+    lesson: 17,
+    group: 2,
+    meaning: "mệt mỏi",
+    romaji: "tsukareru",
+    dictionary: { kanji: "疲れる", kana: "つかれる" },
+    masu: { kanji: "疲れます", kana: "つかれます" },
+    nai: { kanji: "疲れない", kana: "つかれない" },
+    te: { kanji: "疲れて", kana: "つかれて" },
+    ta: { kanji: "疲れた", kana: "つかれた" }
+  },
+  {
+    lesson: 18,
+    group: 1,
+    meaning: "chạy",
+    romaji: "hashiru",
+    dictionary: { kanji: "走る", kana: "はしる" },
+    masu: { kanji: "走ります", kana: "はしります" },
+    nai: { kanji: "走らない", kana: "はしらない" },
+    te: { kanji: "走って", kana: "はしって" },
+    ta: { kanji: "走った", kana: "はしった" }
+  },
+  {
+    lesson: 18,
+    group: 1,
+    meaning: "sờ, chạm",
+    romaji: "sawaru",
+    dictionary: { kanji: "触る", kana: "さわる" },
+    masu: { kanji: "触ります", kana: "さわります" },
+    nai: { kanji: "触らない", kana: "さわらない" },
+    te: { kanji: "触って", kana: "さわって" },
+    ta: { kanji: "触った", kana: "さわった" }
+  },
+  {
+    lesson: 18,
+    group: 2,
+    meaning: "quên",
+    romaji: "wasureru",
+    dictionary: { kanji: "忘れる", kana: "わすれる" },
+    masu: { kanji: "忘れます", kana: "わすれます" },
+    nai: { kanji: "忘れない", kana: "わすれない" },
+    te: { kanji: "忘れて", kana: "わすれて" },
+    ta: { kanji: "忘れた", kana: "わすれた" }
+  },
+  {
+    lesson: 18,
+    group: 3,
+    meaning: "lo lắng",
+    romaji: "shinpai suru",
+    dictionary: { kanji: "心配する", kana: "しんぱいする" },
+    masu: { kanji: "心配します", kana: "しんぱいします" },
+    nai: { kanji: "心配しない", kana: "しんぱいしない" },
+    te: { kanji: "心配して", kana: "しんぱいして" },
+    ta: { kanji: "心配した", kana: "しんぱいした" }
+  },
+  {
+    lesson: 19,
+    group: 1,
+    meaning: "nộp, đưa ra",
+    romaji: "dasu",
+    dictionary: { kanji: "出す", kana: "だす" },
+    masu: { kanji: "出します", kana: "だします" },
+    nai: { kanji: "出さない", kana: "ださない" },
+    te: { kanji: "出して", kana: "だして" },
+    ta: { kanji: "出した", kana: "だした" }
+  },
+  {
+    lesson: 19,
+    group: 3,
+    meaning: "đặt trước",
+    romaji: "yoyaku suru",
+    dictionary: { kanji: "予約する", kana: "よやくする" },
+    masu: { kanji: "予約します", kana: "よやくします" },
+    nai: { kanji: "予約しない", kana: "よやくしない" },
+    te: { kanji: "予約して", kana: "よやくして" },
+    ta: { kanji: "予約した", kana: "よやくした" }
+  },
+  {
+    lesson: 19,
+    group: 3,
+    meaning: "làm thêm giờ",
+    romaji: "zangyou suru",
+    dictionary: { kanji: "残業する", kana: "ざんぎょうする" },
+    masu: { kanji: "残業します", kana: "ざんぎょうします" },
+    nai: { kanji: "残業しない", kana: "ざんぎょうしない" },
+    te: { kanji: "残業して", kana: "ざんぎょうして" },
+    ta: { kanji: "残業した", kana: "ざんぎょうした" }
+  },
+  {
+    lesson: 19,
+    group: 2,
+    meaning: "cho vào",
+    romaji: "ireru",
+    dictionary: { kanji: "入れる", kana: "いれる" },
+    masu: { kanji: "入れます", kana: "いれます" },
+    nai: { kanji: "入れない", kana: "いれない" },
+    te: { kanji: "入れて", kana: "いれて" },
+    ta: { kanji: "入れた", kana: "いれた" }
+  },
+  {
+    lesson: 20,
+    group: 1,
+    meaning: "leo, trèo",
+    romaji: "noboru",
+    dictionary: { kanji: "登る", kana: "のぼる" },
+    masu: { kanji: "登ります", kana: "のぼります" },
+    nai: { kanji: "登らない", kana: "のぼらない" },
+    te: { kanji: "登って", kana: "のぼって" },
+    ta: { kanji: "登った", kana: "のぼった" }
+  },
+  {
+    lesson: 20,
+    group: 1,
+    meaning: "mất đi, hết",
+    romaji: "nakunaru",
+    dictionary: { kanji: "なくなる", kana: "なくなる" },
+    masu: { kanji: "なくなります", kana: "なくなります" },
+    nai: { kanji: "なくならない", kana: "なくならない" },
+    te: { kanji: "なくなって", kana: "なくなって" },
+    ta: { kanji: "なくなった", kana: "なくなった" }
+  },
+  {
+    lesson: 20,
+    group: 2,
+    meaning: "chia tay",
+    romaji: "wakareru",
+    dictionary: { kanji: "別れる", kana: "わかれる" },
+    masu: { kanji: "別れます", kana: "わかれます" },
+    nai: { kanji: "別れない", kana: "わかれない" },
+    te: { kanji: "別れて", kana: "わかれて" },
+    ta: { kanji: "別れた", kana: "わかれた" }
+  },
+  {
+    lesson: 20,
+    group: 3,
+    meaning: "cãi nhau",
+    romaji: "kenka suru",
+    dictionary: { kanji: "けんかする", kana: "けんかする" },
+    masu: { kanji: "けんかします", kana: "けんかします" },
+    nai: { kanji: "けんかしない", kana: "けんかしない" },
+    te: { kanji: "けんかして", kana: "けんかして" },
+    ta: { kanji: "けんかした", kana: "けんかした" }
+  },
+  {
+    lesson: 20,
+    group: 1,
+    meaning: "trở thành",
+    romaji: "naru",
+    dictionary: { kanji: "なる", kana: "なる" },
+    masu: { kanji: "なります", kana: "なります" },
+    nai: { kanji: "ならない", kana: "ならない" },
+    te: { kanji: "なって", kana: "なって" },
+    ta: { kanji: "なった", kana: "なった" }
+  },
+  {
+    lesson: 21,
+    group: 1,
+    meaning: "chết",
+    romaji: "shinu",
+    dictionary: { kanji: "死ぬ", kana: "しぬ" },
+    masu: { kanji: "死にます", kana: "しにます" },
+    nai: { kanji: "死なない", kana: "しなない" },
+    te: { kanji: "死んで", kana: "しんで" },
+    ta: { kanji: "死んだ", kana: "しんだ" }
+  },
+  {
+    lesson: 21,
+    group: 3,
+    meaning: "ôn tập",
+    romaji: "fukushuu suru",
+    dictionary: { kanji: "復習する", kana: "ふくしゅうする" },
+    masu: { kanji: "復習します", kana: "ふくしゅうします" },
+    nai: { kanji: "復習しない", kana: "ふくしゅうしない" },
+    te: { kanji: "復習して", kana: "ふくしゅうして" },
+    ta: { kanji: "復習した", kana: "ふくしゅうした" }
+  },
+  {
+    lesson: 21,
+    group: 3,
+    meaning: "học trước bài",
+    romaji: "yoshuu suru",
+    dictionary: { kanji: "予習する", kana: "よしゅうする" },
+    masu: { kanji: "予習します", kana: "よしゅうします" },
+    nai: { kanji: "予習しない", kana: "よしゅうしない" },
+    te: { kanji: "予習して", kana: "よしゅうして" },
+    ta: { kanji: "予習した", kana: "よしゅうした" }
+  },
+  {
+    lesson: 22,
+    group: 3,
+    meaning: "giật mình",
+    romaji: "bikkuri suru",
+    dictionary: { kanji: "びっくりする", kana: "びっくりする" },
+    masu: { kanji: "びっくりします", kana: "びっくりします" },
+    nai: { kanji: "びっくりしない", kana: "びっくりしない" },
+    te: { kanji: "びっくりして", kana: "びっくりして" },
+    ta: { kanji: "びっくりした", kana: "びっくりした" }
+  },
+  {
+    lesson: 22,
+    group: 1,
+    meaning: "làm rơi",
+    romaji: "otosu",
+    dictionary: { kanji: "落とす", kana: "おとす" },
+    masu: { kanji: "落とします", kana: "おとします" },
+    nai: { kanji: "落とさない", kana: "おとさない" },
+    te: { kanji: "落として", kana: "おとして" },
+    ta: { kanji: "落とした", kana: "おとした" }
+  },
+  {
+    lesson: 22,
+    group: 1,
+    meaning: "nhặt",
+    romaji: "hirou",
+    dictionary: { kanji: "拾う", kana: "ひろう" },
+    masu: { kanji: "拾います", kana: "ひろいます" },
+    nai: { kanji: "拾わない", kana: "ひろわない" },
+    te: { kanji: "拾って", kana: "ひろって" },
+    ta: { kanji: "拾った", kana: "ひろった" }
+  },
+  {
+    lesson: 22,
+    group: 1,
+    meaning: "làm mất",
+    romaji: "nakusu",
+    dictionary: { kanji: "なくす", kana: "なくす" },
+    masu: { kanji: "なくします", kana: "なくします" },
+    nai: { kanji: "なくさない", kana: "なくさない" },
+    te: { kanji: "なくして", kana: "なくして" },
+    ta: { kanji: "なくした", kana: "なくした" }
+  },
+  {
+    lesson: 22,
+    group: 1,
+    meaning: "béo lên, mập lên",
+    romaji: "futoru",
+    dictionary: { kanji: "太る", kana: "ふとる" },
+    masu: { kanji: "太ります", kana: "ふとります" },
+    nai: { kanji: "太らない", kana: "ふとらない" },
+    te: { kanji: "太って", kana: "ふとって" },
+    ta: { kanji: "太った", kana: "ふとった" }
+  },
+  {
+    lesson: 22,
+    group: 2,
+    meaning: "gầy đi, ốm đi",
+    romaji: "yaseru",
+    dictionary: { kanji: "やせる", kana: "やせる" },
+    masu: { kanji: "やせます", kana: "やせます" },
+    nai: { kanji: "やせない", kana: "やせない" },
+    te: { kanji: "やせて", kana: "やせて" },
+    ta: { kanji: "やせた", kana: "やせた" }
+  },
+  {
+    lesson: 23,
+    group: 1,
+    meaning: "sôi",
+    romaji: "waku",
+    dictionary: { kanji: "沸く", kana: "わく" },
+    masu: { kanji: "沸きます", kana: "わきます" },
+    nai: { kanji: "沸かない", kana: "わかない" },
+    te: { kanji: "沸いて", kana: "わいて" },
+    ta: { kanji: "沸いた", kana: "わいた" }
+  },
+  {
+    lesson: 23,
+    group: 1,
+    meaning: "dừng lại",
+    romaji: "tomaru",
+    dictionary: { kanji: "止まる", kana: "とまる" },
+    masu: { kanji: "止まります", kana: "とまります" },
+    nai: { kanji: "止まらない", kana: "とまらない" },
+    te: { kanji: "止まって", kana: "とまって" },
+    ta: { kanji: "止まった", kana: "とまった" }
+  },
+  {
+    lesson: 23,
+    group: 2,
+    meaning: "hỏng, hư",
+    romaji: "kowareru",
+    dictionary: { kanji: "壊れる", kana: "こわれる" },
+    masu: { kanji: "壊れます", kana: "こわれます" },
+    nai: { kanji: "壊れない", kana: "こわれない" },
+    te: { kanji: "壊れて", kana: "こわれて" },
+    ta: { kanji: "壊れた", kana: "こわれた" }
+  },
+  {
+    lesson: 23,
+    group: 1,
+    meaning: "khỏi bệnh, sửa xong",
+    romaji: "naoru",
+    dictionary: { kanji: "治る", kana: "なおる" },
+    masu: { kanji: "治ります", kana: "なおります" },
+    nai: { kanji: "治らない", kana: "なおらない" },
+    te: { kanji: "治って", kana: "なおって" },
+    ta: { kanji: "治った", kana: "なおった" }
+  },
+  {
+    lesson: 23,
+    group: 3,
+    meaning: "hỏng, trục trặc (máy móc)",
+    romaji: "koshou suru",
+    dictionary: { kanji: "故障する", kana: "こしょうする" },
+    masu: { kanji: "故障します", kana: "こしょうします" },
+    nai: { kanji: "故障しない", kana: "こしょうしない" },
+    te: { kanji: "故障して", kana: "こしょうして" },
+    ta: { kanji: "故障した", kana: "こしょうした" }
+  },
+  {
+    lesson: 24,
+    group: 2,
+    meaning: "khen",
+    romaji: "homeru",
+    dictionary: { kanji: "褒める", kana: "ほめる" },
+    masu: { kanji: "褒めます", kana: "ほめます" },
+    nai: { kanji: "褒めない", kana: "ほめない" },
+    te: { kanji: "褒めて", kana: "ほめて" },
+    ta: { kanji: "褒めた", kana: "ほめた" }
+  },
+  {
+    lesson: 24,
+    group: 1,
+    meaning: "mắng",
+    romaji: "shikaru",
+    dictionary: { kanji: "叱る", kana: "しかる" },
+    masu: { kanji: "叱ります", kana: "しかります" },
+    nai: { kanji: "叱らない", kana: "しからない" },
+    te: { kanji: "叱って", kana: "しかって" },
+    ta: { kanji: "叱った", kana: "しかった" }
+  },
+  {
+    lesson: 24,
+    group: 1,
+    meaning: "khóc",
+    romaji: "naku",
+    dictionary: { kanji: "泣く", kana: "なく" },
+    masu: { kanji: "泣きます", kana: "なきます" },
+    nai: { kanji: "泣かない", kana: "なかない" },
+    te: { kanji: "泣いて", kana: "ないて" },
+    ta: { kanji: "泣いた", kana: "ないた" }
+  },
+  {
+    lesson: 24,
+    group: 1,
+    meaning: "sửa chữa",
+    romaji: "naosu",
+    dictionary: { kanji: "直す", kana: "なおす" },
+    masu: { kanji: "直します", kana: "なおします" },
+    nai: { kanji: "直さない", kana: "なおさない" },
+    te: { kanji: "直して", kana: "なおして" },
+    ta: { kanji: "直した", kana: "なおした" }
+  },
+  {
+    lesson: 24,
+    group: 1,
+    meaning: "dẫn đi",
+    romaji: "tsurete iku",
+    dictionary: { kanji: "連れて行く", kana: "つれていく" },
+    masu: { kanji: "連れて行きます", kana: "つれていきます" },
+    nai: { kanji: "連れて行かない", kana: "つれていかない" },
+    te: { kanji: "連れて行って", kana: "つれていって" },
+    ta: { kanji: "連れて行った", kana: "つれていった" }
+  },
+  {
+    lesson: 25,
+    group: 1,
+    meaning: "đến nơi",
+    romaji: "tsuku",
+    dictionary: { kanji: "着く", kana: "つく" },
+    masu: { kanji: "着きます", kana: "つきます" },
+    nai: { kanji: "着かない", kana: "つかない" },
+    te: { kanji: "着いて", kana: "ついて" },
+    ta: { kanji: "着いた", kana: "ついた" }
+  },
+  {
+    lesson: 25,
+    group: 2,
+    meaning: "suy nghĩ",
+    romaji: "kangaeru",
+    dictionary: { kanji: "考える", kana: "かんがえる" },
+    masu: { kanji: "考えます", kana: "かんがえます" },
+    nai: { kanji: "考えない", kana: "かんがえない" },
+    te: { kanji: "考えて", kana: "かんがえて" },
+    ta: { kanji: "考えた", kana: "かんがえた" }
+  },
+  {
+    lesson: 25,
+    group: 3,
+    meaning: "du học",
+    romaji: "ryuugaku suru",
+    dictionary: { kanji: "留学する", kana: "りゅうがくする" },
+    masu: { kanji: "留学します", kana: "りゅうがくします" },
+    nai: { kanji: "留学しない", kana: "りゅうがくしない" },
+    te: { kanji: "留学して", kana: "りゅうがくして" },
+    ta: { kanji: "留学した", kana: "りゅうがくした" }
+  },
+  {
+    lesson: 25,
+    group: 2,
+    meaning: "nuôi dạy",
+    romaji: "sodateru",
+    dictionary: { kanji: "育てる", kana: "そだてる" },
+    masu: { kanji: "育てます", kana: "そだてます" },
+    nai: { kanji: "育てない", kana: "そだてない" },
+    te: { kanji: "育てて", kana: "そだてて" },
+    ta: { kanji: "育てた", kana: "そだてた" }
+  },
+  {
+    lesson: 25,
+    group: 1,
+    meaning: "chơi",
+    romaji: "asobu",
+    dictionary: { kanji: "遊ぶ", kana: "あそぶ" },
+    masu: { kanji: "遊びます", kana: "あそびます" },
+    nai: { kanji: "遊ばない", kana: "あそばない" },
+    te: { kanji: "遊んで", kana: "あそんで" },
+    ta: { kanji: "遊んだ", kana: "あそんだ" }
+  },
+];
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let currentVerb = null;
+
+let filteredVerbs = verbs;
+
+let total = 0;
+
+let correct = 0;
+
+let checked = false;
+
+/* =========================================================
+   HIDE / SHOW STATE
+========================================================= */
+
+let showHiragana = true;
+let showMeaning = false;
+let showGroup = false;
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const lessonFilter =
+  document.getElementById("lessonFilter");
+
+const fromForm =
+  document.getElementById("fromForm");
+
+const toForm =
+  document.getElementById("toForm");
+
+const questionVerb =
+  document.getElementById("questionVerb");
+
+const verbReading =
+  document.getElementById("verbReading");
+
+const meaning =
+  document.getElementById("meaning");
+
+const group =
+  document.getElementById("group");
+
+const answerInput =
+  document.getElementById("answerInput");
+
+const converted =
+  document.getElementById("converted");
+
+const result =
+  document.getElementById("result");
+
+const correctAnswer =
+  document.getElementById("correctAnswer");
+
+/* =========================================================
+   TOGGLE ELEMENTS
+========================================================= */
+
+const toggleHiragana =
+  document.getElementById("toggleHiragana");
+
+const toggleMeaning =
+  document.getElementById("toggleMeaning");
+
+const toggleGroup =
+  document.getElementById("toggleGroup");
+
+
+/* =========================================================
+   LESSON FILTER
+========================================================= */
+
+function populateLessonFilter() {
+
+  const lessons =
+    [...new Set(verbs.map(v => v.lesson))]
+      .sort((a, b) => a - b);
+
+  lessons.forEach(l => {
+
+    const opt =
+      document.createElement("option");
+
+    opt.value = l;
+    opt.textContent = `Bài ${l}`;
+
+    lessonFilter.appendChild(opt);
+  });
+}
+
+function applyLessonFilter() {
+
+  const value =
+    lessonFilter.value;
+
+  filteredVerbs =
+    value === "all"
+      ? verbs
+      : verbs.filter(
+          v => String(v.lesson) === value
+        );
+
+  if (filteredVerbs.length === 0) {
+    filteredVerbs = verbs;
+  }
+}
+
+
+/* =========================================================
+   CREATE QUESTION
+========================================================= */
+
+function createQuestion() {
+
+  const index =
+    Math.floor(
+      Math.random() * filteredVerbs.length
+    );
+
+
+  currentVerb =
+    filteredVerbs[index];
+
+
+  const from =
+    fromForm.value;
+
+
+  /*
+    Hiển thị Kanji
+  */
+
+  questionVerb.textContent =
+    currentVerb[from].kanji;
+
+
+  /*
+    Hiển thị Hiragana
+  */
+
+  verbReading.textContent =
+    currentVerb[from].kana;
+
+
+  meaning.textContent =
+    currentVerb.meaning;
+
+
+  group.textContent =
+    `Nhóm ${currentVerb.group} · Bài ${currentVerb.lesson}`;
+
+
+  /*
+    Reset
+  */
+
+  answerInput.value = "";
+
+  answerInput.className =
+    "answer-input";
+
+  converted.textContent = "";
+
+  result.textContent = "";
+
+  result.className =
+    "result";
+
+  correctAnswer.textContent = "";
+
+  checked = false;
+
+
+  answerInput.focus();
+}
+
+
+/* =========================================================
+   CHECK ANSWER
+========================================================= */
+
+function checkAnswer() {
+
+  if (checked) {
+    return;
+  }
+
+
+  const input =
+    answerInput.value.trim();
+
+
+  if (!input) {
+    return;
+  }
+
+
+  /*
+    Romaji → Hiragana
+  */
+
+  const userHiragana =
+    romajiToHiragana(input);
+
+
+  /*
+    LẤY ĐÁP ÁN HIRAGANA
+    KHÔNG LẤY KANJI
+  */
+
+  const to =
+    toForm.value;
+
+
+  const expected =
+    currentVerb[to].kana;
+
+
+  /*
+    Hiển thị kết quả chuyển đổi
+  */
+
+  converted.textContent =
+    `→ ${userHiragana}`;
+
+
+  total++;
+
+  checked = true;
+
+
+  /*
+    SO SÁNH HIRAGANA
+  */
+
+  if (
+    userHiragana === expected
+  ) {
+
+    correct++;
+
+
+    answerInput.className =
+      "answer-input correct";
+
+
+    result.textContent =
+      "✓ Chính xác!";
+
+
+    result.className =
+      "result correct";
+
+
+    correctAnswer.textContent = "";
+
+
+  } else {
+
+    answerInput.className =
+      "answer-input wrong";
+
+
+    result.textContent =
+      "✕ Chưa chính xác";
+
+
+    result.className =
+      "result wrong";
+
+
+    /*
+      ĐÁP ÁN LUÔN HIỂN THỊ HIRAGANA
+    */
+
+    correctAnswer.textContent =
+      `Đáp án: ${expected}`;
+  }
+
+
+  updateStats();
+}
+
+
+/* =========================================================
+   UPDATE STATS
+========================================================= */
+
+function updateStats() {
+
+  document.getElementById("total")
+    .textContent = total;
+
+
+  document.getElementById("correct")
+    .textContent = correct;
+
+
+  const accuracy =
+    total === 0
+      ? 0
+      : Math.round(
+          correct / total * 100
+        );
+
+
+  document.getElementById("accuracy")
+    .textContent =
+      `${accuracy}%`;
+
+
+  document.getElementById("progressBar")
+    .style.width =
+      `${accuracy}%`;
+}
+
+/* =========================================================
+   UPDATE VISIBILITY
+========================================================= */
+
+function updateVisibility() {
+
+  /*
+    HIRAGANA
+  */
+
+  if (showHiragana) {
+
+    verbReading.classList.remove(
+      "info-hidden"
+    );
+
+    toggleHiragana.textContent = "👁";
+
+    toggleHiragana.classList.remove(
+      "hidden"
+    );
+
+  } else {
+
+    verbReading.classList.add(
+      "info-hidden"
+    );
+
+    toggleHiragana.textContent = "🙈";
+
+    toggleHiragana.classList.add(
+      "hidden"
+    );
+  }
+
+
+  /*
+    MEANING
+  */
+
+  if (showMeaning) {
+
+    meaning.classList.remove(
+      "info-hidden"
+    );
+
+    toggleMeaning.textContent = "👁";
+
+    toggleMeaning.classList.remove(
+      "hidden"
+    );
+
+  } else {
+
+    meaning.classList.add(
+      "info-hidden"
+    );
+
+    toggleMeaning.textContent = "🙈";
+
+    toggleMeaning.classList.add(
+      "hidden"
+    );
+  }
+
+
+  /*
+    GROUP
+  */
+
+  if (showGroup) {
+
+    group.classList.remove(
+      "info-hidden"
+    );
+
+    toggleGroup.textContent = "👁";
+
+    toggleGroup.classList.remove(
+      "hidden"
+    );
+
+  } else {
+
+    group.classList.add(
+      "info-hidden"
+    );
+
+    toggleGroup.textContent = "🙈";
+
+    toggleGroup.classList.add(
+      "hidden"
+    );
+  }
+}
+
+
+/* =========================================================
+   HIRAGANA BUTTON
+========================================================= */
+
+toggleHiragana.addEventListener(
+  "click",
+  () => {
+
+    showHiragana =
+      !showHiragana;
+
+    updateVisibility();
+  }
+);
+
+
+/* =========================================================
+   MEANING BUTTON
+========================================================= */
+
+toggleMeaning.addEventListener(
+  "click",
+  () => {
+
+    showMeaning =
+      !showMeaning;
+
+    updateVisibility();
+  }
+);
+
+
+/* =========================================================
+   GROUP BUTTON
+========================================================= */
+
+toggleGroup.addEventListener(
+  "click",
+  () => {
+
+    showGroup =
+      !showGroup;
+
+    updateVisibility();
+  }
+);
+
+
+/* =========================================================
+   LIVE ROMAJI → HIRAGANA
+========================================================= */
+
+answerInput.addEventListener(
+  "input",
+  () => {
+
+    if (checked) {
+      return;
+    }
+
+
+    const value =
+      answerInput.value;
+
+
+    if (!value) {
+
+      converted.textContent = "";
+
+      return;
+    }
+
+
+    const hiragana =
+      romajiToHiragana(value);
+
+
+    converted.textContent =
+      `→ ${hiragana}`;
+  }
+);
+
+
+/* =========================================================
+   ENTER
+========================================================= */
+
+answerInput.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key !== "Enter") {
+      return;
+    }
+
+
+    if (!checked) {
+
+      checkAnswer();
+
+    } else {
+
+      createQuestion();
+
+    }
+  }
+);
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+document
+  .getElementById("checkBtn")
+  .addEventListener(
+    "click",
+    checkAnswer
+  );
+
+
+document
+  .getElementById("nextBtn")
+  .addEventListener(
+    "click",
+    createQuestion
+  );
+
+
+/* =========================================================
+   FORM CHANGE
+========================================================= */
+
+fromForm.addEventListener(
+  "change",
+  createQuestion
+);
+
+
+toForm.addEventListener(
+  "change",
+  createQuestion
+);
+
+
+lessonFilter.addEventListener(
+  "change",
+  () => {
+
+    applyLessonFilter();
+
+    createQuestion();
+  }
+);
+
+
+/* =========================================================
+   START
+========================================================= */
+
+populateLessonFilter();
+
+applyLessonFilter();
+
+updateVisibility();
+
+createQuestion();
+
+</script>
+
+</body>
+</html>

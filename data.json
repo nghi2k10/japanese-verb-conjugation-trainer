@@ -1,0 +1,3080 @@
+[
+  {
+    "lesson": 1,
+    "verbs": []
+  },
+  {
+    "lesson": 2,
+    "verbs": []
+  },
+  {
+    "lesson": 3,
+    "verbs": []
+  },
+  {
+    "lesson": 4,
+    "verbs": [
+      {
+        "kanji": "起きる",
+        "hiragana": "おきる",
+        "romaji": "okiru",
+        "meaning_vi": "thức dậy",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "起きる",
+            "kana": "おきる"
+          },
+          "masu_form": {
+            "kanji": "起きます",
+            "kana": "おきます"
+          },
+          "nai_form": {
+            "kanji": "起きない",
+            "kana": "おきない"
+          },
+          "te_form": {
+            "kanji": "起きて",
+            "kana": "おきて"
+          },
+          "ta_form": {
+            "kanji": "起きた",
+            "kana": "おきた"
+          }
+        }
+      },
+      {
+        "kanji": "寝る",
+        "hiragana": "ねる",
+        "romaji": "neru",
+        "meaning_vi": "ngủ",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "寝る",
+            "kana": "ねる"
+          },
+          "masu_form": {
+            "kanji": "寝ます",
+            "kana": "ねます"
+          },
+          "nai_form": {
+            "kanji": "寝ない",
+            "kana": "ねない"
+          },
+          "te_form": {
+            "kanji": "寝て",
+            "kana": "ねて"
+          },
+          "ta_form": {
+            "kanji": "寝た",
+            "kana": "ねた"
+          }
+        }
+      },
+      {
+        "kanji": "働く",
+        "hiragana": "はたらく",
+        "romaji": "hataraku",
+        "meaning_vi": "làm việc",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "働く",
+            "kana": "はたらく"
+          },
+          "masu_form": {
+            "kanji": "働きます",
+            "kana": "はたらきます"
+          },
+          "nai_form": {
+            "kanji": "働かない",
+            "kana": "はたらかない"
+          },
+          "te_form": {
+            "kanji": "働いて",
+            "kana": "はたらいて"
+          },
+          "ta_form": {
+            "kanji": "働いた",
+            "kana": "はたらいた"
+          }
+        }
+      },
+      {
+        "kanji": "休む",
+        "hiragana": "やすむ",
+        "romaji": "yasumu",
+        "meaning_vi": "nghỉ (làm/học)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "休む",
+            "kana": "やすむ"
+          },
+          "masu_form": {
+            "kanji": "休みます",
+            "kana": "やすみます"
+          },
+          "nai_form": {
+            "kanji": "休まない",
+            "kana": "やすまない"
+          },
+          "te_form": {
+            "kanji": "休んで",
+            "kana": "やすんで"
+          },
+          "ta_form": {
+            "kanji": "休んだ",
+            "kana": "やすんだ"
+          }
+        }
+      },
+      {
+        "kanji": "勉強する",
+        "hiragana": "べんきょうする",
+        "romaji": "benkyou suru",
+        "meaning_vi": "học tập",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "勉強する",
+            "kana": "べんきょうする"
+          },
+          "masu_form": {
+            "kanji": "勉強します",
+            "kana": "べんきょうします"
+          },
+          "nai_form": {
+            "kanji": "勉強しない",
+            "kana": "べんきょうしない"
+          },
+          "te_form": {
+            "kanji": "勉強して",
+            "kana": "べんきょうして"
+          },
+          "ta_form": {
+            "kanji": "勉強した",
+            "kana": "べんきょうした"
+          }
+        }
+      },
+      {
+        "kanji": "終わる",
+        "hiragana": "おわる",
+        "romaji": "owaru",
+        "meaning_vi": "kết thúc, xong",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "終わる",
+            "kana": "おわる"
+          },
+          "masu_form": {
+            "kanji": "終わります",
+            "kana": "おわります"
+          },
+          "nai_form": {
+            "kanji": "終わらない",
+            "kana": "おわらない"
+          },
+          "te_form": {
+            "kanji": "終わって",
+            "kana": "おわって"
+          },
+          "ta_form": {
+            "kanji": "終わった",
+            "kana": "おわった"
+          }
+        }
+      },
+      {
+        "kanji": "始まる",
+        "hiragana": "はじまる",
+        "romaji": "hajimaru",
+        "meaning_vi": "bắt đầu",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "始まる",
+            "kana": "はじまる"
+          },
+          "masu_form": {
+            "kanji": "始まります",
+            "kana": "はじまります"
+          },
+          "nai_form": {
+            "kanji": "始まらない",
+            "kana": "はじまらない"
+          },
+          "te_form": {
+            "kanji": "始まって",
+            "kana": "はじまって"
+          },
+          "ta_form": {
+            "kanji": "始まった",
+            "kana": "はじまった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 5,
+    "verbs": [
+      {
+        "kanji": "行く",
+        "hiragana": "いく",
+        "romaji": "iku",
+        "meaning_vi": "đi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "行く",
+            "kana": "いく"
+          },
+          "masu_form": {
+            "kanji": "行きます",
+            "kana": "いきます"
+          },
+          "nai_form": {
+            "kanji": "行かない",
+            "kana": "いかない"
+          },
+          "te_form": {
+            "kanji": "行って",
+            "kana": "いって"
+          },
+          "ta_form": {
+            "kanji": "行った",
+            "kana": "いった"
+          }
+        }
+      },
+      {
+        "kanji": "来る",
+        "hiragana": "くる",
+        "romaji": "kuru",
+        "meaning_vi": "đến",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "来る",
+            "kana": "くる"
+          },
+          "masu_form": {
+            "kanji": "来ます",
+            "kana": "きます"
+          },
+          "nai_form": {
+            "kanji": "来ない",
+            "kana": "こない"
+          },
+          "te_form": {
+            "kanji": "来て",
+            "kana": "きて"
+          },
+          "ta_form": {
+            "kanji": "来た",
+            "kana": "きた"
+          }
+        }
+      },
+      {
+        "kanji": "帰る",
+        "hiragana": "かえる",
+        "romaji": "kaeru",
+        "meaning_vi": "về (nhà/nước)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "帰る",
+            "kana": "かえる"
+          },
+          "masu_form": {
+            "kanji": "帰ります",
+            "kana": "かえります"
+          },
+          "nai_form": {
+            "kanji": "帰らない",
+            "kana": "かえらない"
+          },
+          "te_form": {
+            "kanji": "帰って",
+            "kana": "かえって"
+          },
+          "ta_form": {
+            "kanji": "帰った",
+            "kana": "かえった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 6,
+    "verbs": [
+      {
+        "kanji": "食べる",
+        "hiragana": "たべる",
+        "romaji": "taberu",
+        "meaning_vi": "ăn",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "食べる",
+            "kana": "たべる"
+          },
+          "masu_form": {
+            "kanji": "食べます",
+            "kana": "たべます"
+          },
+          "nai_form": {
+            "kanji": "食べない",
+            "kana": "たべない"
+          },
+          "te_form": {
+            "kanji": "食べて",
+            "kana": "たべて"
+          },
+          "ta_form": {
+            "kanji": "食べた",
+            "kana": "たべた"
+          }
+        }
+      },
+      {
+        "kanji": "飲む",
+        "hiragana": "のむ",
+        "romaji": "nomu",
+        "meaning_vi": "uống",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "飲む",
+            "kana": "のむ"
+          },
+          "masu_form": {
+            "kanji": "飲みます",
+            "kana": "のみます"
+          },
+          "nai_form": {
+            "kanji": "飲まない",
+            "kana": "のまない"
+          },
+          "te_form": {
+            "kanji": "飲んで",
+            "kana": "のんで"
+          },
+          "ta_form": {
+            "kanji": "飲んだ",
+            "kana": "のんだ"
+          }
+        }
+      },
+      {
+        "kanji": "吸う",
+        "hiragana": "すう",
+        "romaji": "suu",
+        "meaning_vi": "hút (thuốc)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "吸う",
+            "kana": "すう"
+          },
+          "masu_form": {
+            "kanji": "吸います",
+            "kana": "すいます"
+          },
+          "nai_form": {
+            "kanji": "吸わない",
+            "kana": "すわない"
+          },
+          "te_form": {
+            "kanji": "吸って",
+            "kana": "すって"
+          },
+          "ta_form": {
+            "kanji": "吸った",
+            "kana": "すった"
+          }
+        }
+      },
+      {
+        "kanji": "見る",
+        "hiragana": "みる",
+        "romaji": "miru",
+        "meaning_vi": "xem, nhìn",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "見る",
+            "kana": "みる"
+          },
+          "masu_form": {
+            "kanji": "見ます",
+            "kana": "みます"
+          },
+          "nai_form": {
+            "kanji": "見ない",
+            "kana": "みない"
+          },
+          "te_form": {
+            "kanji": "見て",
+            "kana": "みて"
+          },
+          "ta_form": {
+            "kanji": "見た",
+            "kana": "みた"
+          }
+        }
+      },
+      {
+        "kanji": "聞く",
+        "hiragana": "きく",
+        "romaji": "kiku",
+        "meaning_vi": "nghe, hỏi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "聞く",
+            "kana": "きく"
+          },
+          "masu_form": {
+            "kanji": "聞きます",
+            "kana": "ききます"
+          },
+          "nai_form": {
+            "kanji": "聞かない",
+            "kana": "きかない"
+          },
+          "te_form": {
+            "kanji": "聞いて",
+            "kana": "きいて"
+          },
+          "ta_form": {
+            "kanji": "聞いた",
+            "kana": "きいた"
+          }
+        }
+      },
+      {
+        "kanji": "読む",
+        "hiragana": "よむ",
+        "romaji": "yomu",
+        "meaning_vi": "đọc",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "読む",
+            "kana": "よむ"
+          },
+          "masu_form": {
+            "kanji": "読みます",
+            "kana": "よみます"
+          },
+          "nai_form": {
+            "kanji": "読まない",
+            "kana": "よまない"
+          },
+          "te_form": {
+            "kanji": "読んで",
+            "kana": "よんで"
+          },
+          "ta_form": {
+            "kanji": "読んだ",
+            "kana": "よんだ"
+          }
+        }
+      },
+      {
+        "kanji": "書く",
+        "hiragana": "かく",
+        "romaji": "kaku",
+        "meaning_vi": "viết",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "書く",
+            "kana": "かく"
+          },
+          "masu_form": {
+            "kanji": "書きます",
+            "kana": "かきます"
+          },
+          "nai_form": {
+            "kanji": "書かない",
+            "kana": "かかない"
+          },
+          "te_form": {
+            "kanji": "書いて",
+            "kana": "かいて"
+          },
+          "ta_form": {
+            "kanji": "書いた",
+            "kana": "かいた"
+          }
+        }
+      },
+      {
+        "kanji": "買う",
+        "hiragana": "かう",
+        "romaji": "kau",
+        "meaning_vi": "mua",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "買う",
+            "kana": "かう"
+          },
+          "masu_form": {
+            "kanji": "買います",
+            "kana": "かいます"
+          },
+          "nai_form": {
+            "kanji": "買わない",
+            "kana": "かわない"
+          },
+          "te_form": {
+            "kanji": "買って",
+            "kana": "かって"
+          },
+          "ta_form": {
+            "kanji": "買った",
+            "kana": "かった"
+          }
+        }
+      },
+      {
+        "kanji": "する",
+        "hiragana": "する",
+        "romaji": "suru",
+        "meaning_vi": "làm",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "する",
+            "kana": "する"
+          },
+          "masu_form": {
+            "kanji": "します",
+            "kana": "します"
+          },
+          "nai_form": {
+            "kanji": "しない",
+            "kana": "しない"
+          },
+          "te_form": {
+            "kanji": "して",
+            "kana": "して"
+          },
+          "ta_form": {
+            "kanji": "した",
+            "kana": "した"
+          }
+        }
+      },
+      {
+        "kanji": "会う",
+        "hiragana": "あう",
+        "romaji": "au",
+        "meaning_vi": "gặp",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "会う",
+            "kana": "あう"
+          },
+          "masu_form": {
+            "kanji": "会います",
+            "kana": "あいます"
+          },
+          "nai_form": {
+            "kanji": "会わない",
+            "kana": "あわない"
+          },
+          "te_form": {
+            "kanji": "会って",
+            "kana": "あって"
+          },
+          "ta_form": {
+            "kanji": "会った",
+            "kana": "あった"
+          }
+        }
+      },
+      {
+        "kanji": "言う",
+        "hiragana": "いう",
+        "romaji": "iu",
+        "meaning_vi": "nói",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "言う",
+            "kana": "いう"
+          },
+          "masu_form": {
+            "kanji": "言います",
+            "kana": "いいます"
+          },
+          "nai_form": {
+            "kanji": "言わない",
+            "kana": "いわない"
+          },
+          "te_form": {
+            "kanji": "言って",
+            "kana": "いって"
+          },
+          "ta_form": {
+            "kanji": "言った",
+            "kana": "いった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 7,
+    "verbs": [
+      {
+        "kanji": "貸す",
+        "hiragana": "かす",
+        "romaji": "kasu",
+        "meaning_vi": "cho mượn",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "貸す",
+            "kana": "かす"
+          },
+          "masu_form": {
+            "kanji": "貸します",
+            "kana": "かします"
+          },
+          "nai_form": {
+            "kanji": "貸さない",
+            "kana": "かさない"
+          },
+          "te_form": {
+            "kanji": "貸して",
+            "kana": "かして"
+          },
+          "ta_form": {
+            "kanji": "貸した",
+            "kana": "かした"
+          }
+        }
+      },
+      {
+        "kanji": "借りる",
+        "hiragana": "かりる",
+        "romaji": "kariru",
+        "meaning_vi": "mượn",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "借りる",
+            "kana": "かりる"
+          },
+          "masu_form": {
+            "kanji": "借ります",
+            "kana": "かります"
+          },
+          "nai_form": {
+            "kanji": "借りない",
+            "kana": "かりない"
+          },
+          "te_form": {
+            "kanji": "借りて",
+            "kana": "かりて"
+          },
+          "ta_form": {
+            "kanji": "借りた",
+            "kana": "かりた"
+          }
+        }
+      },
+      {
+        "kanji": "教える",
+        "hiragana": "おしえる",
+        "romaji": "oshieru",
+        "meaning_vi": "dạy, chỉ",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "教える",
+            "kana": "おしえる"
+          },
+          "masu_form": {
+            "kanji": "教えます",
+            "kana": "おしえます"
+          },
+          "nai_form": {
+            "kanji": "教えない",
+            "kana": "おしえない"
+          },
+          "te_form": {
+            "kanji": "教えて",
+            "kana": "おしえて"
+          },
+          "ta_form": {
+            "kanji": "教えた",
+            "kana": "おしえた"
+          }
+        }
+      },
+      {
+        "kanji": "習う",
+        "hiragana": "ならう",
+        "romaji": "narau",
+        "meaning_vi": "học (từ ai đó)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "習う",
+            "kana": "ならう"
+          },
+          "masu_form": {
+            "kanji": "習います",
+            "kana": "ならいます"
+          },
+          "nai_form": {
+            "kanji": "習わない",
+            "kana": "ならわない"
+          },
+          "te_form": {
+            "kanji": "習って",
+            "kana": "ならって"
+          },
+          "ta_form": {
+            "kanji": "習った",
+            "kana": "ならった"
+          }
+        }
+      },
+      {
+        "kanji": "かける",
+        "hiragana": "かける",
+        "romaji": "kakeru",
+        "meaning_vi": "gọi (điện thoại)",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "かける",
+            "kana": "かける"
+          },
+          "masu_form": {
+            "kanji": "かけます",
+            "kana": "かけます"
+          },
+          "nai_form": {
+            "kanji": "かけない",
+            "kana": "かけない"
+          },
+          "te_form": {
+            "kanji": "かけて",
+            "kana": "かけて"
+          },
+          "ta_form": {
+            "kanji": "かけた",
+            "kana": "かけた"
+          }
+        }
+      },
+      {
+        "kanji": "送る",
+        "hiragana": "おくる",
+        "romaji": "okuru",
+        "meaning_vi": "gửi, đưa",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "送る",
+            "kana": "おくる"
+          },
+          "masu_form": {
+            "kanji": "送ります",
+            "kana": "おくります"
+          },
+          "nai_form": {
+            "kanji": "送らない",
+            "kana": "おくらない"
+          },
+          "te_form": {
+            "kanji": "送って",
+            "kana": "おくって"
+          },
+          "ta_form": {
+            "kanji": "送った",
+            "kana": "おくった"
+          }
+        }
+      },
+      {
+        "kanji": "あげる",
+        "hiragana": "あげる",
+        "romaji": "ageru",
+        "meaning_vi": "cho, tặng",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "あげる",
+            "kana": "あげる"
+          },
+          "masu_form": {
+            "kanji": "あげます",
+            "kana": "あげます"
+          },
+          "nai_form": {
+            "kanji": "あげない",
+            "kana": "あげない"
+          },
+          "te_form": {
+            "kanji": "あげて",
+            "kana": "あげて"
+          },
+          "ta_form": {
+            "kanji": "あげた",
+            "kana": "あげた"
+          }
+        }
+      },
+      {
+        "kanji": "もらう",
+        "hiragana": "もらう",
+        "romaji": "morau",
+        "meaning_vi": "nhận",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "もらう",
+            "kana": "もらう"
+          },
+          "masu_form": {
+            "kanji": "もらいます",
+            "kana": "もらいます"
+          },
+          "nai_form": {
+            "kanji": "もらわない",
+            "kana": "もらわない"
+          },
+          "te_form": {
+            "kanji": "もらって",
+            "kana": "もらって"
+          },
+          "ta_form": {
+            "kanji": "もらった",
+            "kana": "もらった"
+          }
+        }
+      },
+      {
+        "kanji": "くれる",
+        "hiragana": "くれる",
+        "romaji": "kureru",
+        "meaning_vi": "cho (tôi)",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "くれる",
+            "kana": "くれる"
+          },
+          "masu_form": {
+            "kanji": "くれます",
+            "kana": "くれます"
+          },
+          "nai_form": {
+            "kanji": "くれない",
+            "kana": "くれない"
+          },
+          "te_form": {
+            "kanji": "くれて",
+            "kana": "くれて"
+          },
+          "ta_form": {
+            "kanji": "くれた",
+            "kana": "くれた"
+          }
+        }
+      },
+      {
+        "kanji": "撮る",
+        "hiragana": "とる",
+        "romaji": "toru",
+        "meaning_vi": "chụp (ảnh)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "撮る",
+            "kana": "とる"
+          },
+          "masu_form": {
+            "kanji": "撮ります",
+            "kana": "とります"
+          },
+          "nai_form": {
+            "kanji": "撮らない",
+            "kana": "とらない"
+          },
+          "te_form": {
+            "kanji": "撮って",
+            "kana": "とって"
+          },
+          "ta_form": {
+            "kanji": "撮った",
+            "kana": "とった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 8,
+    "verbs": [
+      {
+        "kanji": "分かる",
+        "hiragana": "わかる",
+        "romaji": "wakaru",
+        "meaning_vi": "hiểu, biết",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "分かる",
+            "kana": "わかる"
+          },
+          "masu_form": {
+            "kanji": "分かります",
+            "kana": "わかります"
+          },
+          "nai_form": {
+            "kanji": "分からない",
+            "kana": "わからない"
+          },
+          "te_form": {
+            "kanji": "分かって",
+            "kana": "わかって"
+          },
+          "ta_form": {
+            "kanji": "分かった",
+            "kana": "わかった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 9,
+    "verbs": [
+      {
+        "kanji": "ある",
+        "hiragana": "ある",
+        "romaji": "aru",
+        "meaning_vi": "có, tồn tại (vật)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "ある",
+            "kana": "ある"
+          },
+          "masu_form": {
+            "kanji": "あります",
+            "kana": "あります"
+          },
+          "nai_form": {
+            "kanji": "ない",
+            "kana": "ない"
+          },
+          "te_form": {
+            "kanji": "あって",
+            "kana": "あって"
+          },
+          "ta_form": {
+            "kanji": "あった",
+            "kana": "あった"
+          }
+        }
+      },
+      {
+        "kanji": "いる",
+        "hiragana": "いる",
+        "romaji": "iru",
+        "meaning_vi": "có, tồn tại (người/vật sống)",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "いる",
+            "kana": "いる"
+          },
+          "masu_form": {
+            "kanji": "います",
+            "kana": "います"
+          },
+          "nai_form": {
+            "kanji": "いない",
+            "kana": "いない"
+          },
+          "te_form": {
+            "kanji": "いて",
+            "kana": "いて"
+          },
+          "ta_form": {
+            "kanji": "いた",
+            "kana": "いた"
+          }
+        }
+      },
+      {
+        "kanji": "生まれる",
+        "hiragana": "うまれる",
+        "romaji": "umareru",
+        "meaning_vi": "được sinh ra",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "生まれる",
+            "kana": "うまれる"
+          },
+          "masu_form": {
+            "kanji": "生まれます",
+            "kana": "うまれます"
+          },
+          "nai_form": {
+            "kanji": "生まれない",
+            "kana": "うまれない"
+          },
+          "te_form": {
+            "kanji": "生まれて",
+            "kana": "うまれて"
+          },
+          "ta_form": {
+            "kanji": "生まれた",
+            "kana": "うまれた"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 10,
+    "verbs": []
+  },
+  {
+    "lesson": 11,
+    "verbs": [
+      {
+        "kanji": "かかる",
+        "hiragana": "かかる",
+        "romaji": "kakaru",
+        "meaning_vi": "mất (thời gian, tiền)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "かかる",
+            "kana": "かかる"
+          },
+          "masu_form": {
+            "kanji": "かかります",
+            "kana": "かかります"
+          },
+          "nai_form": {
+            "kanji": "かからない",
+            "kana": "かからない"
+          },
+          "te_form": {
+            "kanji": "かかって",
+            "kana": "かかって"
+          },
+          "ta_form": {
+            "kanji": "かかった",
+            "kana": "かかった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 12,
+    "verbs": []
+  },
+  {
+    "lesson": 13,
+    "verbs": [
+      {
+        "kanji": "乗る",
+        "hiragana": "のる",
+        "romaji": "noru",
+        "meaning_vi": "lên (xe), đi (bằng)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "乗る",
+            "kana": "のる"
+          },
+          "masu_form": {
+            "kanji": "乗ります",
+            "kana": "のります"
+          },
+          "nai_form": {
+            "kanji": "乗らない",
+            "kana": "のらない"
+          },
+          "te_form": {
+            "kanji": "乗って",
+            "kana": "のって"
+          },
+          "ta_form": {
+            "kanji": "乗った",
+            "kana": "のった"
+          }
+        }
+      },
+      {
+        "kanji": "降りる",
+        "hiragana": "おりる",
+        "romaji": "oriru",
+        "meaning_vi": "xuống (xe)",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "降りる",
+            "kana": "おりる"
+          },
+          "masu_form": {
+            "kanji": "降ります",
+            "kana": "おります"
+          },
+          "nai_form": {
+            "kanji": "降りない",
+            "kana": "おりない"
+          },
+          "te_form": {
+            "kanji": "降りて",
+            "kana": "おりて"
+          },
+          "ta_form": {
+            "kanji": "降りた",
+            "kana": "おりた"
+          }
+        }
+      },
+      {
+        "kanji": "浴びる",
+        "hiragana": "あびる",
+        "romaji": "abiru",
+        "meaning_vi": "tắm (vòi sen)",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "浴びる",
+            "kana": "あびる"
+          },
+          "masu_form": {
+            "kanji": "浴びます",
+            "kana": "あびます"
+          },
+          "nai_form": {
+            "kanji": "浴びない",
+            "kana": "あびない"
+          },
+          "te_form": {
+            "kanji": "浴びて",
+            "kana": "あびて"
+          },
+          "ta_form": {
+            "kanji": "浴びた",
+            "kana": "あびた"
+          }
+        }
+      },
+      {
+        "kanji": "見せる",
+        "hiragana": "みせる",
+        "romaji": "miseru",
+        "meaning_vi": "cho xem",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "見せる",
+            "kana": "みせる"
+          },
+          "masu_form": {
+            "kanji": "見せます",
+            "kana": "みせます"
+          },
+          "nai_form": {
+            "kanji": "見せない",
+            "kana": "みせない"
+          },
+          "te_form": {
+            "kanji": "見せて",
+            "kana": "みせて"
+          },
+          "ta_form": {
+            "kanji": "見せた",
+            "kana": "みせた"
+          }
+        }
+      },
+      {
+        "kanji": "渡る",
+        "hiragana": "わたる",
+        "romaji": "wataru",
+        "meaning_vi": "băng qua, đi qua",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "渡る",
+            "kana": "わたる"
+          },
+          "masu_form": {
+            "kanji": "渡ります",
+            "kana": "わたります"
+          },
+          "nai_form": {
+            "kanji": "渡らない",
+            "kana": "わたらない"
+          },
+          "te_form": {
+            "kanji": "渡って",
+            "kana": "わたって"
+          },
+          "ta_form": {
+            "kanji": "渡った",
+            "kana": "わたった"
+          }
+        }
+      },
+      {
+        "kanji": "曲がる",
+        "hiragana": "まがる",
+        "romaji": "magaru",
+        "meaning_vi": "rẽ, quẹo",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "曲がる",
+            "kana": "まがる"
+          },
+          "masu_form": {
+            "kanji": "曲がります",
+            "kana": "まがります"
+          },
+          "nai_form": {
+            "kanji": "曲がらない",
+            "kana": "まがらない"
+          },
+          "te_form": {
+            "kanji": "曲がって",
+            "kana": "まがって"
+          },
+          "ta_form": {
+            "kanji": "曲がった",
+            "kana": "まがった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 14,
+    "verbs": [
+      {
+        "kanji": "手伝う",
+        "hiragana": "てつだう",
+        "romaji": "tetsudau",
+        "meaning_vi": "giúp đỡ",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "手伝う",
+            "kana": "てつだう"
+          },
+          "masu_form": {
+            "kanji": "手伝います",
+            "kana": "てつだいます"
+          },
+          "nai_form": {
+            "kanji": "手伝わない",
+            "kana": "てつだわない"
+          },
+          "te_form": {
+            "kanji": "手伝って",
+            "kana": "てつだって"
+          },
+          "ta_form": {
+            "kanji": "手伝った",
+            "kana": "てつだった"
+          }
+        }
+      },
+      {
+        "kanji": "持つ",
+        "hiragana": "もつ",
+        "romaji": "motsu",
+        "meaning_vi": "cầm, mang",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "持つ",
+            "kana": "もつ"
+          },
+          "masu_form": {
+            "kanji": "持ちます",
+            "kana": "もちます"
+          },
+          "nai_form": {
+            "kanji": "持たない",
+            "kana": "もたない"
+          },
+          "te_form": {
+            "kanji": "持って",
+            "kana": "もって"
+          },
+          "ta_form": {
+            "kanji": "持った",
+            "kana": "もった"
+          }
+        }
+      },
+      {
+        "kanji": "座る",
+        "hiragana": "すわる",
+        "romaji": "suwaru",
+        "meaning_vi": "ngồi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "座る",
+            "kana": "すわる"
+          },
+          "masu_form": {
+            "kanji": "座ります",
+            "kana": "すわります"
+          },
+          "nai_form": {
+            "kanji": "座らない",
+            "kana": "すわらない"
+          },
+          "te_form": {
+            "kanji": "座って",
+            "kana": "すわって"
+          },
+          "ta_form": {
+            "kanji": "座った",
+            "kana": "すわった"
+          }
+        }
+      },
+      {
+        "kanji": "立つ",
+        "hiragana": "たつ",
+        "romaji": "tatsu",
+        "meaning_vi": "đứng",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "立つ",
+            "kana": "たつ"
+          },
+          "masu_form": {
+            "kanji": "立ちます",
+            "kana": "たちます"
+          },
+          "nai_form": {
+            "kanji": "立たない",
+            "kana": "たたない"
+          },
+          "te_form": {
+            "kanji": "立って",
+            "kana": "たって"
+          },
+          "ta_form": {
+            "kanji": "立った",
+            "kana": "たった"
+          }
+        }
+      },
+      {
+        "kanji": "消す",
+        "hiragana": "けす",
+        "romaji": "kesu",
+        "meaning_vi": "tắt, xóa",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "消す",
+            "kana": "けす"
+          },
+          "masu_form": {
+            "kanji": "消します",
+            "kana": "けします"
+          },
+          "nai_form": {
+            "kanji": "消さない",
+            "kana": "けさない"
+          },
+          "te_form": {
+            "kanji": "消して",
+            "kana": "けして"
+          },
+          "ta_form": {
+            "kanji": "消した",
+            "kana": "けした"
+          }
+        }
+      },
+      {
+        "kanji": "つける",
+        "hiragana": "つける",
+        "romaji": "tsukeru",
+        "meaning_vi": "bật",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "つける",
+            "kana": "つける"
+          },
+          "masu_form": {
+            "kanji": "つけます",
+            "kana": "つけます"
+          },
+          "nai_form": {
+            "kanji": "つけない",
+            "kana": "つけない"
+          },
+          "te_form": {
+            "kanji": "つけて",
+            "kana": "つけて"
+          },
+          "ta_form": {
+            "kanji": "つけた",
+            "kana": "つけた"
+          }
+        }
+      },
+      {
+        "kanji": "開ける",
+        "hiragana": "あける",
+        "romaji": "akeru",
+        "meaning_vi": "mở",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "開ける",
+            "kana": "あける"
+          },
+          "masu_form": {
+            "kanji": "開けます",
+            "kana": "あけます"
+          },
+          "nai_form": {
+            "kanji": "開けない",
+            "kana": "あけない"
+          },
+          "te_form": {
+            "kanji": "開けて",
+            "kana": "あけて"
+          },
+          "ta_form": {
+            "kanji": "開けた",
+            "kana": "あけた"
+          }
+        }
+      },
+      {
+        "kanji": "閉める",
+        "hiragana": "しめる",
+        "romaji": "shimeru",
+        "meaning_vi": "đóng",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "閉める",
+            "kana": "しめる"
+          },
+          "masu_form": {
+            "kanji": "閉めます",
+            "kana": "しめます"
+          },
+          "nai_form": {
+            "kanji": "閉めない",
+            "kana": "しめない"
+          },
+          "te_form": {
+            "kanji": "閉めて",
+            "kana": "しめて"
+          },
+          "ta_form": {
+            "kanji": "閉めた",
+            "kana": "しめた"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 15,
+    "verbs": [
+      {
+        "kanji": "住む",
+        "hiragana": "すむ",
+        "romaji": "sumu",
+        "meaning_vi": "sống, cư trú",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "住む",
+            "kana": "すむ"
+          },
+          "masu_form": {
+            "kanji": "住みます",
+            "kana": "すみます"
+          },
+          "nai_form": {
+            "kanji": "住まない",
+            "kana": "すまない"
+          },
+          "te_form": {
+            "kanji": "住んで",
+            "kana": "すんで"
+          },
+          "ta_form": {
+            "kanji": "住んだ",
+            "kana": "すんだ"
+          }
+        }
+      },
+      {
+        "kanji": "知る",
+        "hiragana": "しる",
+        "romaji": "shiru",
+        "meaning_vi": "biết",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "知る",
+            "kana": "しる"
+          },
+          "masu_form": {
+            "kanji": "知ります",
+            "kana": "しります"
+          },
+          "nai_form": {
+            "kanji": "知らない",
+            "kana": "しらない"
+          },
+          "te_form": {
+            "kanji": "知って",
+            "kana": "しって"
+          },
+          "ta_form": {
+            "kanji": "知った",
+            "kana": "しった"
+          }
+        }
+      },
+      {
+        "kanji": "結婚する",
+        "hiragana": "けっこんする",
+        "romaji": "kekkon suru",
+        "meaning_vi": "kết hôn",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "結婚する",
+            "kana": "けっこんする"
+          },
+          "masu_form": {
+            "kanji": "結婚します",
+            "kana": "けっこんします"
+          },
+          "nai_form": {
+            "kanji": "結婚しない",
+            "kana": "けっこんしない"
+          },
+          "te_form": {
+            "kanji": "結婚して",
+            "kana": "けっこんして"
+          },
+          "ta_form": {
+            "kanji": "結婚した",
+            "kana": "けっこんした"
+          }
+        }
+      },
+      {
+        "kanji": "勤める",
+        "hiragana": "つとめる",
+        "romaji": "tsutomeru",
+        "meaning_vi": "làm việc (tại)",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "勤める",
+            "kana": "つとめる"
+          },
+          "masu_form": {
+            "kanji": "勤めます",
+            "kana": "つとめます"
+          },
+          "nai_form": {
+            "kanji": "勤めない",
+            "kana": "つとめない"
+          },
+          "te_form": {
+            "kanji": "勤めて",
+            "kana": "つとめて"
+          },
+          "ta_form": {
+            "kanji": "勤めた",
+            "kana": "つとめた"
+          }
+        }
+      },
+      {
+        "kanji": "覚える",
+        "hiragana": "おぼえる",
+        "romaji": "oboeru",
+        "meaning_vi": "ghi nhớ",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "覚える",
+            "kana": "おぼえる"
+          },
+          "masu_form": {
+            "kanji": "覚えます",
+            "kana": "おぼえます"
+          },
+          "nai_form": {
+            "kanji": "覚えない",
+            "kana": "おぼえない"
+          },
+          "te_form": {
+            "kanji": "覚えて",
+            "kana": "おぼえて"
+          },
+          "ta_form": {
+            "kanji": "覚えた",
+            "kana": "おぼえた"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 16,
+    "verbs": [
+      {
+        "kanji": "使う",
+        "hiragana": "つかう",
+        "romaji": "tsukau",
+        "meaning_vi": "sử dụng",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "使う",
+            "kana": "つかう"
+          },
+          "masu_form": {
+            "kanji": "使います",
+            "kana": "つかいます"
+          },
+          "nai_form": {
+            "kanji": "使わない",
+            "kana": "つかわない"
+          },
+          "te_form": {
+            "kanji": "使って",
+            "kana": "つかって"
+          },
+          "ta_form": {
+            "kanji": "使った",
+            "kana": "つかった"
+          }
+        }
+      },
+      {
+        "kanji": "入る",
+        "hiragana": "はいる",
+        "romaji": "hairu",
+        "meaning_vi": "vào",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "入る",
+            "kana": "はいる"
+          },
+          "masu_form": {
+            "kanji": "入ります",
+            "kana": "はいります"
+          },
+          "nai_form": {
+            "kanji": "入らない",
+            "kana": "はいらない"
+          },
+          "te_form": {
+            "kanji": "入って",
+            "kana": "はいって"
+          },
+          "ta_form": {
+            "kanji": "入った",
+            "kana": "はいった"
+          }
+        }
+      },
+      {
+        "kanji": "出る",
+        "hiragana": "でる",
+        "romaji": "deru",
+        "meaning_vi": "ra, xuất phát",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "出る",
+            "kana": "でる"
+          },
+          "masu_form": {
+            "kanji": "出ます",
+            "kana": "でます"
+          },
+          "nai_form": {
+            "kanji": "出ない",
+            "kana": "でない"
+          },
+          "te_form": {
+            "kanji": "出て",
+            "kana": "でて"
+          },
+          "ta_form": {
+            "kanji": "出た",
+            "kana": "でた"
+          }
+        }
+      },
+      {
+        "kanji": "コピーする",
+        "hiragana": "コピーする",
+        "romaji": "kopii suru",
+        "meaning_vi": "photocopy",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "コピーする",
+            "kana": "コピーする"
+          },
+          "masu_form": {
+            "kanji": "コピーします",
+            "kana": "コピーします"
+          },
+          "nai_form": {
+            "kanji": "コピーしない",
+            "kana": "コピーしない"
+          },
+          "te_form": {
+            "kanji": "コピーして",
+            "kana": "コピーして"
+          },
+          "ta_form": {
+            "kanji": "コピーした",
+            "kana": "コピーした"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 17,
+    "verbs": [
+      {
+        "kanji": "運転する",
+        "hiragana": "うんてんする",
+        "romaji": "unten suru",
+        "meaning_vi": "lái (xe)",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "運転する",
+            "kana": "うんてんする"
+          },
+          "masu_form": {
+            "kanji": "運転します",
+            "kana": "うんてんします"
+          },
+          "nai_form": {
+            "kanji": "運転しない",
+            "kana": "うんてんしない"
+          },
+          "te_form": {
+            "kanji": "運転して",
+            "kana": "うんてんして"
+          },
+          "ta_form": {
+            "kanji": "運転した",
+            "kana": "うんてんした"
+          }
+        }
+      },
+      {
+        "kanji": "弾く",
+        "hiragana": "ひく",
+        "romaji": "hiku",
+        "meaning_vi": "chơi (đàn)",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "弾く",
+            "kana": "ひく"
+          },
+          "masu_form": {
+            "kanji": "弾きます",
+            "kana": "ひきます"
+          },
+          "nai_form": {
+            "kanji": "弾かない",
+            "kana": "ひかない"
+          },
+          "te_form": {
+            "kanji": "弾いて",
+            "kana": "ひいて"
+          },
+          "ta_form": {
+            "kanji": "弾いた",
+            "kana": "ひいた"
+          }
+        }
+      },
+      {
+        "kanji": "泳ぐ",
+        "hiragana": "およぐ",
+        "romaji": "oyogu",
+        "meaning_vi": "bơi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "泳ぐ",
+            "kana": "およぐ"
+          },
+          "masu_form": {
+            "kanji": "泳ぎます",
+            "kana": "およぎます"
+          },
+          "nai_form": {
+            "kanji": "泳がない",
+            "kana": "およがない"
+          },
+          "te_form": {
+            "kanji": "泳いで",
+            "kana": "およいで"
+          },
+          "ta_form": {
+            "kanji": "泳いだ",
+            "kana": "およいだ"
+          }
+        }
+      },
+      {
+        "kanji": "踊る",
+        "hiragana": "おどる",
+        "romaji": "odoru",
+        "meaning_vi": "nhảy múa",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "踊る",
+            "kana": "おどる"
+          },
+          "masu_form": {
+            "kanji": "踊ります",
+            "kana": "おどります"
+          },
+          "nai_form": {
+            "kanji": "踊らない",
+            "kana": "おどらない"
+          },
+          "te_form": {
+            "kanji": "踊って",
+            "kana": "おどって"
+          },
+          "ta_form": {
+            "kanji": "踊った",
+            "kana": "おどった"
+          }
+        }
+      },
+      {
+        "kanji": "できる",
+        "hiragana": "できる",
+        "romaji": "dekiru",
+        "meaning_vi": "có thể, làm được",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "できる",
+            "kana": "できる"
+          },
+          "masu_form": {
+            "kanji": "できます",
+            "kana": "できます"
+          },
+          "nai_form": {
+            "kanji": "できない",
+            "kana": "できない"
+          },
+          "te_form": {
+            "kanji": "できて",
+            "kana": "できて"
+          },
+          "ta_form": {
+            "kanji": "できた",
+            "kana": "できた"
+          }
+        }
+      },
+      {
+        "kanji": "疲れる",
+        "hiragana": "つかれる",
+        "romaji": "tsukareru",
+        "meaning_vi": "mệt mỏi",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "疲れる",
+            "kana": "つかれる"
+          },
+          "masu_form": {
+            "kanji": "疲れます",
+            "kana": "つかれます"
+          },
+          "nai_form": {
+            "kanji": "疲れない",
+            "kana": "つかれない"
+          },
+          "te_form": {
+            "kanji": "疲れて",
+            "kana": "つかれて"
+          },
+          "ta_form": {
+            "kanji": "疲れた",
+            "kana": "つかれた"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 18,
+    "verbs": [
+      {
+        "kanji": "走る",
+        "hiragana": "はしる",
+        "romaji": "hashiru",
+        "meaning_vi": "chạy",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "走る",
+            "kana": "はしる"
+          },
+          "masu_form": {
+            "kanji": "走ります",
+            "kana": "はしります"
+          },
+          "nai_form": {
+            "kanji": "走らない",
+            "kana": "はしらない"
+          },
+          "te_form": {
+            "kanji": "走って",
+            "kana": "はしって"
+          },
+          "ta_form": {
+            "kanji": "走った",
+            "kana": "はしった"
+          }
+        }
+      },
+      {
+        "kanji": "触る",
+        "hiragana": "さわる",
+        "romaji": "sawaru",
+        "meaning_vi": "sờ, chạm",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "触る",
+            "kana": "さわる"
+          },
+          "masu_form": {
+            "kanji": "触ります",
+            "kana": "さわります"
+          },
+          "nai_form": {
+            "kanji": "触らない",
+            "kana": "さわらない"
+          },
+          "te_form": {
+            "kanji": "触って",
+            "kana": "さわって"
+          },
+          "ta_form": {
+            "kanji": "触った",
+            "kana": "さわった"
+          }
+        }
+      },
+      {
+        "kanji": "忘れる",
+        "hiragana": "わすれる",
+        "romaji": "wasureru",
+        "meaning_vi": "quên",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "忘れる",
+            "kana": "わすれる"
+          },
+          "masu_form": {
+            "kanji": "忘れます",
+            "kana": "わすれます"
+          },
+          "nai_form": {
+            "kanji": "忘れない",
+            "kana": "わすれない"
+          },
+          "te_form": {
+            "kanji": "忘れて",
+            "kana": "わすれて"
+          },
+          "ta_form": {
+            "kanji": "忘れた",
+            "kana": "わすれた"
+          }
+        }
+      },
+      {
+        "kanji": "心配する",
+        "hiragana": "しんぱいする",
+        "romaji": "shinpai suru",
+        "meaning_vi": "lo lắng",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "心配する",
+            "kana": "しんぱいする"
+          },
+          "masu_form": {
+            "kanji": "心配します",
+            "kana": "しんぱいします"
+          },
+          "nai_form": {
+            "kanji": "心配しない",
+            "kana": "しんぱいしない"
+          },
+          "te_form": {
+            "kanji": "心配して",
+            "kana": "しんぱいして"
+          },
+          "ta_form": {
+            "kanji": "心配した",
+            "kana": "しんぱいした"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 19,
+    "verbs": [
+      {
+        "kanji": "出す",
+        "hiragana": "だす",
+        "romaji": "dasu",
+        "meaning_vi": "nộp, đưa ra",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "出す",
+            "kana": "だす"
+          },
+          "masu_form": {
+            "kanji": "出します",
+            "kana": "だします"
+          },
+          "nai_form": {
+            "kanji": "出さない",
+            "kana": "ださない"
+          },
+          "te_form": {
+            "kanji": "出して",
+            "kana": "だして"
+          },
+          "ta_form": {
+            "kanji": "出した",
+            "kana": "だした"
+          }
+        }
+      },
+      {
+        "kanji": "予約する",
+        "hiragana": "よやくする",
+        "romaji": "yoyaku suru",
+        "meaning_vi": "đặt trước",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "予約する",
+            "kana": "よやくする"
+          },
+          "masu_form": {
+            "kanji": "予約します",
+            "kana": "よやくします"
+          },
+          "nai_form": {
+            "kanji": "予約しない",
+            "kana": "よやくしない"
+          },
+          "te_form": {
+            "kanji": "予約して",
+            "kana": "よやくして"
+          },
+          "ta_form": {
+            "kanji": "予約した",
+            "kana": "よやくした"
+          }
+        }
+      },
+      {
+        "kanji": "残業する",
+        "hiragana": "ざんぎょうする",
+        "romaji": "zangyou suru",
+        "meaning_vi": "làm thêm giờ",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "残業する",
+            "kana": "ざんぎょうする"
+          },
+          "masu_form": {
+            "kanji": "残業します",
+            "kana": "ざんぎょうします"
+          },
+          "nai_form": {
+            "kanji": "残業しない",
+            "kana": "ざんぎょうしない"
+          },
+          "te_form": {
+            "kanji": "残業して",
+            "kana": "ざんぎょうして"
+          },
+          "ta_form": {
+            "kanji": "残業した",
+            "kana": "ざんぎょうした"
+          }
+        }
+      },
+      {
+        "kanji": "入れる",
+        "hiragana": "いれる",
+        "romaji": "ireru",
+        "meaning_vi": "cho vào",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "入れる",
+            "kana": "いれる"
+          },
+          "masu_form": {
+            "kanji": "入れます",
+            "kana": "いれます"
+          },
+          "nai_form": {
+            "kanji": "入れない",
+            "kana": "いれない"
+          },
+          "te_form": {
+            "kanji": "入れて",
+            "kana": "いれて"
+          },
+          "ta_form": {
+            "kanji": "入れた",
+            "kana": "いれた"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 20,
+    "verbs": [
+      {
+        "kanji": "登る",
+        "hiragana": "のぼる",
+        "romaji": "noboru",
+        "meaning_vi": "leo, trèo",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "登る",
+            "kana": "のぼる"
+          },
+          "masu_form": {
+            "kanji": "登ります",
+            "kana": "のぼります"
+          },
+          "nai_form": {
+            "kanji": "登らない",
+            "kana": "のぼらない"
+          },
+          "te_form": {
+            "kanji": "登って",
+            "kana": "のぼって"
+          },
+          "ta_form": {
+            "kanji": "登った",
+            "kana": "のぼった"
+          }
+        }
+      },
+      {
+        "kanji": "なくなる",
+        "hiragana": "なくなる",
+        "romaji": "nakunaru",
+        "meaning_vi": "mất đi, hết",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "なくなる",
+            "kana": "なくなる"
+          },
+          "masu_form": {
+            "kanji": "なくなります",
+            "kana": "なくなります"
+          },
+          "nai_form": {
+            "kanji": "なくならない",
+            "kana": "なくならない"
+          },
+          "te_form": {
+            "kanji": "なくなって",
+            "kana": "なくなって"
+          },
+          "ta_form": {
+            "kanji": "なくなった",
+            "kana": "なくなった"
+          }
+        }
+      },
+      {
+        "kanji": "別れる",
+        "hiragana": "わかれる",
+        "romaji": "wakareru",
+        "meaning_vi": "chia tay",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "別れる",
+            "kana": "わかれる"
+          },
+          "masu_form": {
+            "kanji": "別れます",
+            "kana": "わかれます"
+          },
+          "nai_form": {
+            "kanji": "別れない",
+            "kana": "わかれない"
+          },
+          "te_form": {
+            "kanji": "別れて",
+            "kana": "わかれて"
+          },
+          "ta_form": {
+            "kanji": "別れた",
+            "kana": "わかれた"
+          }
+        }
+      },
+      {
+        "kanji": "けんかする",
+        "hiragana": "けんかする",
+        "romaji": "kenka suru",
+        "meaning_vi": "cãi nhau",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "けんかする",
+            "kana": "けんかする"
+          },
+          "masu_form": {
+            "kanji": "けんかします",
+            "kana": "けんかします"
+          },
+          "nai_form": {
+            "kanji": "けんかしない",
+            "kana": "けんかしない"
+          },
+          "te_form": {
+            "kanji": "けんかして",
+            "kana": "けんかして"
+          },
+          "ta_form": {
+            "kanji": "けんかした",
+            "kana": "けんかした"
+          }
+        }
+      },
+      {
+        "kanji": "なる",
+        "hiragana": "なる",
+        "romaji": "naru",
+        "meaning_vi": "trở thành",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "なる",
+            "kana": "なる"
+          },
+          "masu_form": {
+            "kanji": "なります",
+            "kana": "なります"
+          },
+          "nai_form": {
+            "kanji": "ならない",
+            "kana": "ならない"
+          },
+          "te_form": {
+            "kanji": "なって",
+            "kana": "なって"
+          },
+          "ta_form": {
+            "kanji": "なった",
+            "kana": "なった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 21,
+    "verbs": [
+      {
+        "kanji": "死ぬ",
+        "hiragana": "しぬ",
+        "romaji": "shinu",
+        "meaning_vi": "chết",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "死ぬ",
+            "kana": "しぬ"
+          },
+          "masu_form": {
+            "kanji": "死にます",
+            "kana": "しにます"
+          },
+          "nai_form": {
+            "kanji": "死なない",
+            "kana": "しなない"
+          },
+          "te_form": {
+            "kanji": "死んで",
+            "kana": "しんで"
+          },
+          "ta_form": {
+            "kanji": "死んだ",
+            "kana": "しんだ"
+          }
+        }
+      },
+      {
+        "kanji": "復習する",
+        "hiragana": "ふくしゅうする",
+        "romaji": "fukushuu suru",
+        "meaning_vi": "ôn tập",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "復習する",
+            "kana": "ふくしゅうする"
+          },
+          "masu_form": {
+            "kanji": "復習します",
+            "kana": "ふくしゅうします"
+          },
+          "nai_form": {
+            "kanji": "復習しない",
+            "kana": "ふくしゅうしない"
+          },
+          "te_form": {
+            "kanji": "復習して",
+            "kana": "ふくしゅうして"
+          },
+          "ta_form": {
+            "kanji": "復習した",
+            "kana": "ふくしゅうした"
+          }
+        }
+      },
+      {
+        "kanji": "予習する",
+        "hiragana": "よしゅうする",
+        "romaji": "yoshuu suru",
+        "meaning_vi": "học trước bài",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "予習する",
+            "kana": "よしゅうする"
+          },
+          "masu_form": {
+            "kanji": "予習します",
+            "kana": "よしゅうします"
+          },
+          "nai_form": {
+            "kanji": "予習しない",
+            "kana": "よしゅうしない"
+          },
+          "te_form": {
+            "kanji": "予習して",
+            "kana": "よしゅうして"
+          },
+          "ta_form": {
+            "kanji": "予習した",
+            "kana": "よしゅうした"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 22,
+    "verbs": [
+      {
+        "kanji": "びっくりする",
+        "hiragana": "びっくりする",
+        "romaji": "bikkuri suru",
+        "meaning_vi": "giật mình",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "びっくりする",
+            "kana": "びっくりする"
+          },
+          "masu_form": {
+            "kanji": "びっくりします",
+            "kana": "びっくりします"
+          },
+          "nai_form": {
+            "kanji": "びっくりしない",
+            "kana": "びっくりしない"
+          },
+          "te_form": {
+            "kanji": "びっくりして",
+            "kana": "びっくりして"
+          },
+          "ta_form": {
+            "kanji": "びっくりした",
+            "kana": "びっくりした"
+          }
+        }
+      },
+      {
+        "kanji": "落とす",
+        "hiragana": "おとす",
+        "romaji": "otosu",
+        "meaning_vi": "làm rơi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "落とす",
+            "kana": "おとす"
+          },
+          "masu_form": {
+            "kanji": "落とします",
+            "kana": "おとします"
+          },
+          "nai_form": {
+            "kanji": "落とさない",
+            "kana": "おとさない"
+          },
+          "te_form": {
+            "kanji": "落として",
+            "kana": "おとして"
+          },
+          "ta_form": {
+            "kanji": "落とした",
+            "kana": "おとした"
+          }
+        }
+      },
+      {
+        "kanji": "拾う",
+        "hiragana": "ひろう",
+        "romaji": "hirou",
+        "meaning_vi": "nhặt",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "拾う",
+            "kana": "ひろう"
+          },
+          "masu_form": {
+            "kanji": "拾います",
+            "kana": "ひろいます"
+          },
+          "nai_form": {
+            "kanji": "拾わない",
+            "kana": "ひろわない"
+          },
+          "te_form": {
+            "kanji": "拾って",
+            "kana": "ひろって"
+          },
+          "ta_form": {
+            "kanji": "拾った",
+            "kana": "ひろった"
+          }
+        }
+      },
+      {
+        "kanji": "なくす",
+        "hiragana": "なくす",
+        "romaji": "nakusu",
+        "meaning_vi": "làm mất",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "なくす",
+            "kana": "なくす"
+          },
+          "masu_form": {
+            "kanji": "なくします",
+            "kana": "なくします"
+          },
+          "nai_form": {
+            "kanji": "なくさない",
+            "kana": "なくさない"
+          },
+          "te_form": {
+            "kanji": "なくして",
+            "kana": "なくして"
+          },
+          "ta_form": {
+            "kanji": "なくした",
+            "kana": "なくした"
+          }
+        }
+      },
+      {
+        "kanji": "太る",
+        "hiragana": "ふとる",
+        "romaji": "futoru",
+        "meaning_vi": "béo lên, mập lên",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "太る",
+            "kana": "ふとる"
+          },
+          "masu_form": {
+            "kanji": "太ります",
+            "kana": "ふとります"
+          },
+          "nai_form": {
+            "kanji": "太らない",
+            "kana": "ふとらない"
+          },
+          "te_form": {
+            "kanji": "太って",
+            "kana": "ふとって"
+          },
+          "ta_form": {
+            "kanji": "太った",
+            "kana": "ふとった"
+          }
+        }
+      },
+      {
+        "kanji": "やせる",
+        "hiragana": "やせる",
+        "romaji": "yaseru",
+        "meaning_vi": "gầy đi, ốm đi",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "やせる",
+            "kana": "やせる"
+          },
+          "masu_form": {
+            "kanji": "やせます",
+            "kana": "やせます"
+          },
+          "nai_form": {
+            "kanji": "やせない",
+            "kana": "やせない"
+          },
+          "te_form": {
+            "kanji": "やせて",
+            "kana": "やせて"
+          },
+          "ta_form": {
+            "kanji": "やせた",
+            "kana": "やせた"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 23,
+    "verbs": [
+      {
+        "kanji": "沸く",
+        "hiragana": "わく",
+        "romaji": "waku",
+        "meaning_vi": "sôi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "沸く",
+            "kana": "わく"
+          },
+          "masu_form": {
+            "kanji": "沸きます",
+            "kana": "わきます"
+          },
+          "nai_form": {
+            "kanji": "沸かない",
+            "kana": "わかない"
+          },
+          "te_form": {
+            "kanji": "沸いて",
+            "kana": "わいて"
+          },
+          "ta_form": {
+            "kanji": "沸いた",
+            "kana": "わいた"
+          }
+        }
+      },
+      {
+        "kanji": "止まる",
+        "hiragana": "とまる",
+        "romaji": "tomaru",
+        "meaning_vi": "dừng lại",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "止まる",
+            "kana": "とまる"
+          },
+          "masu_form": {
+            "kanji": "止まります",
+            "kana": "とまります"
+          },
+          "nai_form": {
+            "kanji": "止まらない",
+            "kana": "とまらない"
+          },
+          "te_form": {
+            "kanji": "止まって",
+            "kana": "とまって"
+          },
+          "ta_form": {
+            "kanji": "止まった",
+            "kana": "とまった"
+          }
+        }
+      },
+      {
+        "kanji": "壊れる",
+        "hiragana": "こわれる",
+        "romaji": "kowareru",
+        "meaning_vi": "hỏng, hư",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "壊れる",
+            "kana": "こわれる"
+          },
+          "masu_form": {
+            "kanji": "壊れます",
+            "kana": "こわれます"
+          },
+          "nai_form": {
+            "kanji": "壊れない",
+            "kana": "こわれない"
+          },
+          "te_form": {
+            "kanji": "壊れて",
+            "kana": "こわれて"
+          },
+          "ta_form": {
+            "kanji": "壊れた",
+            "kana": "こわれた"
+          }
+        }
+      },
+      {
+        "kanji": "治る",
+        "hiragana": "なおる",
+        "romaji": "naoru",
+        "meaning_vi": "khỏi bệnh, sửa xong",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "治る",
+            "kana": "なおる"
+          },
+          "masu_form": {
+            "kanji": "治ります",
+            "kana": "なおります"
+          },
+          "nai_form": {
+            "kanji": "治らない",
+            "kana": "なおらない"
+          },
+          "te_form": {
+            "kanji": "治って",
+            "kana": "なおって"
+          },
+          "ta_form": {
+            "kanji": "治った",
+            "kana": "なおった"
+          }
+        }
+      },
+      {
+        "kanji": "故障する",
+        "hiragana": "こしょうする",
+        "romaji": "koshou suru",
+        "meaning_vi": "hỏng, trục trặc (máy móc)",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "故障する",
+            "kana": "こしょうする"
+          },
+          "masu_form": {
+            "kanji": "故障します",
+            "kana": "こしょうします"
+          },
+          "nai_form": {
+            "kanji": "故障しない",
+            "kana": "こしょうしない"
+          },
+          "te_form": {
+            "kanji": "故障して",
+            "kana": "こしょうして"
+          },
+          "ta_form": {
+            "kanji": "故障した",
+            "kana": "こしょうした"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 24,
+    "verbs": [
+      {
+        "kanji": "褒める",
+        "hiragana": "ほめる",
+        "romaji": "homeru",
+        "meaning_vi": "khen",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "褒める",
+            "kana": "ほめる"
+          },
+          "masu_form": {
+            "kanji": "褒めます",
+            "kana": "ほめます"
+          },
+          "nai_form": {
+            "kanji": "褒めない",
+            "kana": "ほめない"
+          },
+          "te_form": {
+            "kanji": "褒めて",
+            "kana": "ほめて"
+          },
+          "ta_form": {
+            "kanji": "褒めた",
+            "kana": "ほめた"
+          }
+        }
+      },
+      {
+        "kanji": "叱る",
+        "hiragana": "しかる",
+        "romaji": "shikaru",
+        "meaning_vi": "mắng",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "叱る",
+            "kana": "しかる"
+          },
+          "masu_form": {
+            "kanji": "叱ります",
+            "kana": "しかります"
+          },
+          "nai_form": {
+            "kanji": "叱らない",
+            "kana": "しからない"
+          },
+          "te_form": {
+            "kanji": "叱って",
+            "kana": "しかって"
+          },
+          "ta_form": {
+            "kanji": "叱った",
+            "kana": "しかった"
+          }
+        }
+      },
+      {
+        "kanji": "泣く",
+        "hiragana": "なく",
+        "romaji": "naku",
+        "meaning_vi": "khóc",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "泣く",
+            "kana": "なく"
+          },
+          "masu_form": {
+            "kanji": "泣きます",
+            "kana": "なきます"
+          },
+          "nai_form": {
+            "kanji": "泣かない",
+            "kana": "なかない"
+          },
+          "te_form": {
+            "kanji": "泣いて",
+            "kana": "ないて"
+          },
+          "ta_form": {
+            "kanji": "泣いた",
+            "kana": "ないた"
+          }
+        }
+      },
+      {
+        "kanji": "直す",
+        "hiragana": "なおす",
+        "romaji": "naosu",
+        "meaning_vi": "sửa chữa",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "直す",
+            "kana": "なおす"
+          },
+          "masu_form": {
+            "kanji": "直します",
+            "kana": "なおします"
+          },
+          "nai_form": {
+            "kanji": "直さない",
+            "kana": "なおさない"
+          },
+          "te_form": {
+            "kanji": "直して",
+            "kana": "なおして"
+          },
+          "ta_form": {
+            "kanji": "直した",
+            "kana": "なおした"
+          }
+        }
+      },
+      {
+        "kanji": "連れて行く",
+        "hiragana": "つれていく",
+        "romaji": "tsurete iku",
+        "meaning_vi": "dẫn đi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "連れて行く",
+            "kana": "つれていく"
+          },
+          "masu_form": {
+            "kanji": "連れて行きます",
+            "kana": "つれていきます"
+          },
+          "nai_form": {
+            "kanji": "連れて行かない",
+            "kana": "つれていかない"
+          },
+          "te_form": {
+            "kanji": "連れて行って",
+            "kana": "つれていって"
+          },
+          "ta_form": {
+            "kanji": "連れて行った",
+            "kana": "つれていった"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "lesson": 25,
+    "verbs": [
+      {
+        "kanji": "着く",
+        "hiragana": "つく",
+        "romaji": "tsuku",
+        "meaning_vi": "đến nơi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "着く",
+            "kana": "つく"
+          },
+          "masu_form": {
+            "kanji": "着きます",
+            "kana": "つきます"
+          },
+          "nai_form": {
+            "kanji": "着かない",
+            "kana": "つかない"
+          },
+          "te_form": {
+            "kanji": "着いて",
+            "kana": "ついて"
+          },
+          "ta_form": {
+            "kanji": "着いた",
+            "kana": "ついた"
+          }
+        }
+      },
+      {
+        "kanji": "考える",
+        "hiragana": "かんがえる",
+        "romaji": "kangaeru",
+        "meaning_vi": "suy nghĩ",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "考える",
+            "kana": "かんがえる"
+          },
+          "masu_form": {
+            "kanji": "考えます",
+            "kana": "かんがえます"
+          },
+          "nai_form": {
+            "kanji": "考えない",
+            "kana": "かんがえない"
+          },
+          "te_form": {
+            "kanji": "考えて",
+            "kana": "かんがえて"
+          },
+          "ta_form": {
+            "kanji": "考えた",
+            "kana": "かんがえた"
+          }
+        }
+      },
+      {
+        "kanji": "留学する",
+        "hiragana": "りゅうがくする",
+        "romaji": "ryuugaku suru",
+        "meaning_vi": "du học",
+        "group": 3,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "留学する",
+            "kana": "りゅうがくする"
+          },
+          "masu_form": {
+            "kanji": "留学します",
+            "kana": "りゅうがくします"
+          },
+          "nai_form": {
+            "kanji": "留学しない",
+            "kana": "りゅうがくしない"
+          },
+          "te_form": {
+            "kanji": "留学して",
+            "kana": "りゅうがくして"
+          },
+          "ta_form": {
+            "kanji": "留学した",
+            "kana": "りゅうがくした"
+          }
+        }
+      },
+      {
+        "kanji": "育てる",
+        "hiragana": "そだてる",
+        "romaji": "sodateru",
+        "meaning_vi": "nuôi dạy",
+        "group": 2,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "育てる",
+            "kana": "そだてる"
+          },
+          "masu_form": {
+            "kanji": "育てます",
+            "kana": "そだてます"
+          },
+          "nai_form": {
+            "kanji": "育てない",
+            "kana": "そだてない"
+          },
+          "te_form": {
+            "kanji": "育てて",
+            "kana": "そだてて"
+          },
+          "ta_form": {
+            "kanji": "育てた",
+            "kana": "そだてた"
+          }
+        }
+      },
+      {
+        "kanji": "遊ぶ",
+        "hiragana": "あそぶ",
+        "romaji": "asobu",
+        "meaning_vi": "chơi",
+        "group": 1,
+        "forms": {
+          "dictionary_form": {
+            "kanji": "遊ぶ",
+            "kana": "あそぶ"
+          },
+          "masu_form": {
+            "kanji": "遊びます",
+            "kana": "あそびます"
+          },
+          "nai_form": {
+            "kanji": "遊ばない",
+            "kana": "あそばない"
+          },
+          "te_form": {
+            "kanji": "遊んで",
+            "kana": "あそんで"
+          },
+          "ta_form": {
+            "kanji": "遊んだ",
+            "kana": "あそんだ"
+          }
+        }
+      }
+    ]
+  }
+]
